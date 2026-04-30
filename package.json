@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-ankoro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anna-SA2002/portfolio-ankoro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Anna-SA2002/portfolio-ankoro/issues"
+  },
+  "homepage": "https://github.com/Anna-SA2002/portfolio-ankoro#readme",
+  "devDependencies": {
+    "vite": "^8.0.10"
+  }
+}
