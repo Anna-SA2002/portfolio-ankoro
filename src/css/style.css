@@ -168,7 +168,12 @@ ol {
   color: var(--text-main);
 }
 
-.works-sub-name,
+.works-sub-name {
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+
 .works-skill-year {
   font-size: 0.7rem;
+  margin-top: 0.7rem;
 }
