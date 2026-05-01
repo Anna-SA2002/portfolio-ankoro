@@ -36,11 +36,13 @@ body {
 
 /* --- Header --- */
 .header-container {
-  max-width: 1200px;
+  width: 100%;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  background-color: var(--bg-color);
 }
 
 .logo {
@@ -95,6 +97,10 @@ nav a:hover {
   color: var(--text-hover);
 }
 
+.works-inner {
+  padding-top: 100px;
+}
+
 .works-list {
   flex-wrap: wrap;
   -webkit-box-pack: start;
@@ -108,6 +114,24 @@ ol {
   list-style: none;
 }
 
+@media (max-width: 768px) {
+  .container {
+    margin: 0 auto;
+  }
+
+  .works-list {
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+  }
+
+  .works-list li a {
+    height: 300px;
+  }
+}
+
 .works-list li {
   width: 100%;
   padding: 0;
@@ -116,6 +140,7 @@ ol {
 
 .works-list li a {
   width: 100%;
+  height: 280px;
   display: block;
   text-decoration: none;
   background: var(--bg-color);
@@ -130,5 +155,5 @@ ol {
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
-  height: 180px;
+  height: 200px;
 }

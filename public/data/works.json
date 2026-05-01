@@ -1,31 +1,41 @@
 [
   {
-    "title": "3Dモデリング",
-    "sub-title": "3D modeling",
-    "skill": "blender",
+    "title": "IAMAS2026 卒展WEBサイト",
+    "sub-title": "WEB",
+    "skill": "vue.js / Github",
     "description": "",
-    "year": "2023",
-    "image": "/assets/img/3d/3d-02.png",
+    "year": "2026",
+    "image": "/assets/img/web/iamas2026.png",
     "url": "#",
-    "reference": ""
+    "reference": "https://www.iamas.ac.jp/exhibit26/"
   },
   {
-    "title": "cording",
-    "sub-title": "",
-    "skill": "p5.js",
+    "title": "かわいいかくれんぼ",
+    "sub-title": "performance",
+    "skill": "art work",
     "description": "",
-    "year": "2023",
-    "image": "/assets/img/p5/cake.png",
+    "year": "2026",
+    "image": "/assets/img/iamas/iamas-01.jpg",
     "url": "#",
-    "reference": "https://www.iamas.ac.jp/openhouse/24/"
+    "reference": "https://www.iamas.ac.jp/exhibit26/works/sato_anna"
   },
   {
-    "title": "illustration",
-    "sub-title": "",
-    "skill": "CLIP STUDIO PAINT",
+    "title": "変身",
+    "sub-title": "performance",
+    "skill": "open house",
     "description": "",
-    "year": "2023 ~",
-    "image": "/assets/img/AR/main.jpg",
+    "year": "2025",
+    "image": "/assets/img/illustration/other/openhouse.png",
+    "url": "#",
+    "reference": "https://www.iamas.ac.jp/openhouse/"
+  },
+  {
+    "title": "わたしはゆるく、自転車にのる。",
+    "sub-title": "critical cycling",
+    "skill": "article / WordPress",
+    "description": "",
+    "year": "2024 ~ 2025",
+    "image": "/assets/img/illustration/article/24-11.png",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
@@ -40,43 +50,33 @@
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
   {
-    "title": "わたしはゆるく、自転車にのる。",
-    "sub-title": "critical cycling",
-    "skill": "article / WordPress",
+    "title": "illustration",
+    "sub-title": " ",
+    "skill": "CLIP STUDIO PAINT",
     "description": "",
-    "year": "2024 ~ 2025",
-    "image": "/assets/img/illustration/article/24-11.png",
+    "year": "2023 ~",
+    "image": "/assets/img/illustration/pastel/p-07.png",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
   {
-    "title": "変身",
-    "sub-title": "performance",
-    "skill": "open house",
+    "title": "cording",
+    "sub-title": "",
+    "skill": "p5.js",
     "description": "",
-    "year": "2025",
-    "image": "/assets/img/illustration/other/openhouse.png",
+    "year": "2023",
+    "image": "/assets/img/p5/cake.png",
     "url": "#",
-    "reference": "https://www.iamas.ac.jp/openhouse/"
+    "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
   {
-    "title": "かわいいかくれんぼ",
-    "sub-title": "performance",
-    "skill": "art work",
+    "title": "3Dモデリング",
+    "sub-title": "3D modeling",
+    "skill": "blender",
     "description": "",
-    "year": "2026",
-    "image": "/assets/img/iamas/iamas-01.jpg",
+    "year": "2023",
+    "image": "/assets/img/3d/3d-02.png",
     "url": "#",
-    "reference": "https://www.iamas.ac.jp/exhibit26/works/sato_anna"
-  },
-  {
-    "title": "IAMAS2026 卒展WEBサイト",
-    "sub-title": "WEB",
-    "skill": "vue.js / Github",
-    "description": "",
-    "year": "2026",
-    "image": "/assets/img/web/iamas2026.png",
-    "url": "#",
-    "reference": "https://www.iamas.ac.jp/exhibit26/"
+    "reference": ""
   }
 ]
