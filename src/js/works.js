@@ -1,0 +1,44 @@
+const worksList = document.querySelector("#works-list");
+
+async function loadWorks() {
+  try {
+    const response = await fetch("/data/works.json");
+
+    if (!response.ok) {
+      throw new Error("works.json の読み込みに失敗しました");
+    }
+
+    // works配列
+    const works = await response.json();
+
+    worksList.innerHTML = works
+      .map((work) => {
+        return `
+         <li>
+            <a href="${works.url}">
+              <img src="${work.image}" alt="${work.title}の画像" />
+              <div class="works-text">
+                <p class="works-name">
+                  ${work.title}         
+                  <br />
+                  ${work["sub-title"]} 
+                </p>
+                <p>${work.skill} / ${work.year}</p>
+              </div>
+            </a>
+          </li>
+        `;
+      })
+      .join("");
+  } catch (error) {
+    console.error(error);
+
+    worksList.innerHTML = `
+      <p class="error-message">
+        Worksデータを読み込めませんでした。JSONファイルの場所や文法を確認してください。
+      </p>
+    `;
+  }
+}
+
+loadWorks();
