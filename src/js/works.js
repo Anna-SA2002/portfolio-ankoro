@@ -20,10 +20,13 @@ async function loadWorks() {
               <div class="works-text">
                 <p class="works-name">
                   ${work.title}         
-                  <br />
+                </p>
+                <p class="works-sub-name">
                   ${work["sub-title"]} 
                 </p>
-                <p>${work.skill} / ${work.year}</p>
+                <p class="works-skill-year">
+                    ${work.skill} / ${work.year}
+                </p>
               </div>
             </a>
           </li>

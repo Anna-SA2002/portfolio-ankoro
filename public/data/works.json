@@ -5,7 +5,7 @@
     "skill": "vue.js / Github",
     "description": "",
     "year": "2026",
-    "image": "/assets/img/web/iamas2026.png",
+    "image": "/assets/img/web/iamas2026.webp",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/exhibit26/"
   },
@@ -15,7 +15,7 @@
     "skill": "art work",
     "description": "",
     "year": "2026",
-    "image": "/assets/img/iamas/iamas-01.jpg",
+    "image": "/assets/img/iamas/iamas-01.webp",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/exhibit26/works/sato_anna"
   },
@@ -25,7 +25,7 @@
     "skill": "open house",
     "description": "",
     "year": "2025",
-    "image": "/assets/img/illustration/other/openhouse.png",
+    "image": "/assets/img/illustration/other/openhouse.webp",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/openhouse/"
   },
@@ -35,7 +35,7 @@
     "skill": "article / WordPress",
     "description": "",
     "year": "2024 ~ 2025",
-    "image": "/assets/img/illustration/article/24-11.png",
+    "image": "/assets/img/illustration/article/24-11.webp",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
@@ -45,7 +45,7 @@
     "skill": "open hous / Unity",
     "description": "",
     "year": "2024",
-    "image": "/assets/img/AR/main.jpg",
+    "image": "/assets/img/AR/main.webp",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
@@ -55,7 +55,7 @@
     "skill": "CLIP STUDIO PAINT",
     "description": "",
     "year": "2023 ~",
-    "image": "/assets/img/illustration/pastel/p-07.png",
+    "image": "/assets/img/illustration/pastel/p-07.webp",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
@@ -65,7 +65,7 @@
     "skill": "p5.js",
     "description": "",
     "year": "2023",
-    "image": "/assets/img/p5/cake.png",
+    "image": "/assets/img/p5/cake.webp",
     "url": "#",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
@@ -75,7 +75,7 @@
     "skill": "blender",
     "description": "",
     "year": "2023",
-    "image": "/assets/img/3d/3d-02.png",
+    "image": "/assets/img/3d/3d-02.webp",
     "url": "#",
     "reference": ""
   }

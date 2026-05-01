@@ -3,7 +3,7 @@
   --accent-cyan: #b2f2f8;
   --accent-pink: #ffe4f0;
   --text-main: #333333;
-  --text-sub: #fcfcfc;
+  --text-sub: #777;
   --text-hover: #1fd2ff;
   --border-color: #eeeeee;
   --card-bg: #ffffff;
@@ -46,11 +46,11 @@ body {
 }
 
 .logo {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: var(--text-main);
   font-weight: 600;
   letter-spacing: 0.2em;
-  margin: 0;
+  margin: 0 1rem;
   display: inline-block;
   border-bottom: 1px solid var(--text-main);
 }
@@ -140,7 +140,7 @@ ol {
 
 .works-list li a {
   width: 100%;
-  height: 280px;
+  height: 290px;
   display: block;
   text-decoration: none;
   background: var(--bg-color);
@@ -156,4 +156,19 @@ ol {
   object-fit: cover;
   width: 100%;
   height: 200px;
+}
+
+.works-text {
+  margin: 0 0.2rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-sub);
+}
+
+.works-name {
+  color: var(--text-main);
+}
+
+.works-sub-name,
+.works-skill-year {
+  font-size: 0.7rem;
 }
