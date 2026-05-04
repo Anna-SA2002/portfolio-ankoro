@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #fcfcfc;
+  --bg-color: #fffff6;
   --accent-cyan: #b2f2f8;
   --accent-pink: #ffe4f0;
   --text-main: #333333;
@@ -97,9 +97,13 @@ nav a:hover {
   color: var(--text-hover);
 }
 
-.works-inner {
+.container {
   padding-top: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
+
+/* works page */
 
 .works-list {
   flex-wrap: wrap;
@@ -130,6 +134,10 @@ ol {
   .works-list li a {
     height: 300px;
   }
+
+  .container {
+    padding: 0 20px;
+  }
 }
 
 .works-list li {
@@ -145,10 +153,11 @@ ol {
   text-decoration: none;
   background: var(--bg-color);
   color: var(--text-main);
+  transition: background-color 0.1s;
 }
 
 .works-list li a:hover {
-  background-color: var(--text-hover);
+  background-color: var(--accent-cyan);
 }
 
 .works-list li a img {
@@ -176,4 +185,14 @@ ol {
 .works-skill-year {
   font-size: 0.7rem;
   margin-top: 0.7rem;
+}
+
+/* about page */
+
+.about-my-name {
+  margin-bottom: 3rem;
+}
+
+.about-text {
+  margin-bottom: 3rem;
 }
