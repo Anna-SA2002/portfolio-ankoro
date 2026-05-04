@@ -28,12 +28,6 @@ body {
   background-position: center center;
 }
 
-/* --- Layout --- */
-
-.container {
-  margin: 0 auto;
-}
-
 /* --- Header --- */
 .header-container {
   width: 100%;
@@ -98,7 +92,7 @@ nav a:hover {
 }
 
 .container {
-  padding-top: 100px;
+  padding-top: 120px;
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -120,7 +114,7 @@ ol {
 
 @media (max-width: 768px) {
   .container {
-    margin: 0 auto;
+    padding: 100px 15px;
   }
 
   .works-list {
@@ -133,10 +127,6 @@ ol {
 
   .works-list li a {
     height: 300px;
-  }
-
-  .container {
-    padding: 0 20px;
   }
 }
 
@@ -194,5 +184,14 @@ ol {
 }
 
 .about-text {
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+}
+
+.artist-img-container img {
+  width: 100px;
+  height: auto;
+}
+
+.about-text h3 {
+  margin-bottom: 1rem;
 }
