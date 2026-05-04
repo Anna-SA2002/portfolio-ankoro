@@ -1,6 +1,7 @@
 [
   {
     "title": "IAMAS2026 卒展WEBサイト",
+    "slug": "iamas2026-web",
     "sub-title": "WEB",
     "skill": "vue.js / Github",
     "description": "",
@@ -11,6 +12,7 @@
   },
   {
     "title": "かわいいかくれんぼ",
+    "slug": "kawaii-kakurenbo",
     "sub-title": "performance",
     "skill": "art work",
     "description": "",
@@ -21,6 +23,7 @@
   },
   {
     "title": "変身",
+    "slug": "henshin",
     "sub-title": "performance",
     "skill": "open house",
     "description": "",
@@ -31,6 +34,7 @@
   },
   {
     "title": "わたしはゆるく、自転車にのる。",
+    "slug": "yuru-chari",
     "sub-title": "critical cycling",
     "skill": "article / WordPress",
     "description": "",
@@ -41,8 +45,9 @@
   },
   {
     "title": "アバターたちの空間",
+    "slug": "avatar-space",
     "sub-title": "AR",
-    "skill": "open hous / Unity",
+    "skill": "open house / Unity",
     "description": "",
     "year": "2024",
     "image": "/assets/img/AR/main.webp",
@@ -51,6 +56,7 @@
   },
   {
     "title": "illustration",
+    "slug": "illustration",
     "sub-title": " ",
     "skill": "CLIP STUDIO PAINT",
     "description": "",
@@ -61,6 +67,7 @@
   },
   {
     "title": "cording",
+    "slug": "cording",
     "sub-title": "",
     "skill": "p5.js",
     "description": "",
@@ -71,6 +78,7 @@
   },
   {
     "title": "3Dモデリング",
+    "slug": "3d-modeling",
     "sub-title": "3D modeling",
     "skill": "blender",
     "description": "",

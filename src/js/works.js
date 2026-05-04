@@ -15,7 +15,7 @@ async function loadWorks() {
       .map((work) => {
         return `
          <li>
-            <a href="${works.url}">
+            <a href="./work.html?slug=${encodeURIComponent(work.slug)}">
               <img src="${work.image}" alt="${work.title}の画像" />
               <div class="works-text">
                 <p class="works-name">
