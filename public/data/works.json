@@ -4,10 +4,10 @@
     "slug": "iamas2026-web",
     "sub-title": "WEB",
     "skill": "vue.js / Github",
-    "description": "",
+    "description": "これはテストです。",
     "year": "2026",
     "image": "/assets/img/web/iamas2026.webp",
-    "url": "#",
+    "url": "",
     "reference": "https://www.iamas.ac.jp/exhibit26/"
   },
   {
@@ -18,7 +18,7 @@
     "description": "",
     "year": "2026",
     "image": "/assets/img/iamas/iamas-01.webp",
-    "url": "#",
+    "url": "",
     "reference": "https://www.iamas.ac.jp/exhibit26/works/sato_anna"
   },
   {
@@ -29,7 +29,7 @@
     "description": "",
     "year": "2025",
     "image": "/assets/img/illustration/other/openhouse.webp",
-    "url": "#",
+    "url": "",
     "reference": "https://www.iamas.ac.jp/openhouse/"
   },
   {
@@ -40,8 +40,8 @@
     "description": "",
     "year": "2024 ~ 2025",
     "image": "/assets/img/illustration/article/24-11.webp",
-    "url": "#",
-    "reference": "https://www.iamas.ac.jp/openhouse/24/"
+    "url": "",
+    "reference": "https://criticalcycling.com/author/anna-sato/"
   },
   {
     "title": "アバターたちの空間",
@@ -51,7 +51,7 @@
     "description": "",
     "year": "2024",
     "image": "/assets/img/AR/main.webp",
-    "url": "#",
+    "url": "",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
   {
@@ -62,8 +62,8 @@
     "description": "",
     "year": "2023 ~",
     "image": "/assets/img/illustration/pastel/p-07.webp",
-    "url": "#",
-    "reference": "https://www.iamas.ac.jp/openhouse/24/"
+    "url": "./illustration.html",
+    "reference": ""
   },
   {
     "title": "cording",
@@ -73,8 +73,8 @@
     "description": "",
     "year": "2023",
     "image": "/assets/img/p5/cake.webp",
-    "url": "#",
-    "reference": "https://www.iamas.ac.jp/openhouse/24/"
+    "url": "",
+    "reference": ""
   },
   {
     "title": "3Dモデリング",
@@ -84,7 +84,7 @@
     "description": "",
     "year": "2023",
     "image": "/assets/img/3d/3d-02.webp",
-    "url": "#",
+    "url": "",
     "reference": ""
   }
 ]

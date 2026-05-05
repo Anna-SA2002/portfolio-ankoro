@@ -28,8 +28,9 @@ async function loadWorkDetail() {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
+  // slugがない場合
   if (!slug) {
-    showError("URLに slug が指定されていません。");
+    showError("URLが指定されていません。");
     return;
   }
 
@@ -50,17 +51,13 @@ async function loadWorkDetail() {
 
     document.title = `sato anna | ${work.title}`;
 
+    // reference先の取得
     const referenceLink = work.reference
       ? `<a href="${escapeHTML(work.reference)}" target="_blank" rel="noopener noreferrer">reference</a>`
       : "";
 
-    const projectLink =
-      work.url && work.url !== "#"
-        ? `<a href="${escapeHTML(work.url)}" target="_blank" rel="noopener noreferrer">view project</a>`
-        : "";
-
     workDetail.innerHTML = `
-      <div class="work-detail-image-wrap">
+      <div class="work-detail-image-container">
         <img
           class="work-detail-image"
           src="${escapeHTML(work.image)}"
@@ -79,7 +76,6 @@ async function loadWorkDetail() {
         </p>
 
         <div class="work-detail-links">
-          ${projectLink}
           ${referenceLink}
         </div>
       </div>
