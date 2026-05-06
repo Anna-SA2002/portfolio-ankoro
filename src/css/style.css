@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #fffff6;
+  --bg-color: #ffffff;
   --accent-cyan: #b2f2f8;
   --accent-pink: #ffe4f0;
   --text-main: #333333;
@@ -8,19 +8,22 @@
   --border-color: #eeeeee;
   --card-bg: #ffffff;
   --font-gothic: "Outfit", "Noto Sans JP", sans-serif;
-  --font-mincho: "Shippori Mincho", serif;
+  --font-mincho: "Sawarabi Mincho", serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  scrollbar-color: var(--text-hover) var(--bg-color);
+  scrollbar-width: thin;
 }
 
 body {
   font-family: var(--font-gothic);
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
 
   background-color: var(--bg-color);
   color: var(--text-main);
@@ -78,6 +81,11 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 40px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--text-main);
 }
 
 nav a {
@@ -185,6 +193,10 @@ ol {
 
 /* about page */
 
+.about-inner {
+  max-width: 800px;
+}
+
 .about-my-name {
   margin-bottom: 3rem;
 }
@@ -204,19 +216,44 @@ ol {
 
 /* work detail page */
 
-.back-link {
-  display: inline-block;
-  margin: 40px 0;
-  font-size: 14px;
-  text-decoration: none;
+.page-work-detail {
+  overflow: hidden;
+}
+
+.page-work-detail .container {
+  height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 0;
+}
+
+.page-work-detail section {
+  margin-bottom: 0;
 }
 
 .work-detail {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
-  align-items: start;
-  padding-bottom: 80px;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+
+  height: 75vh;
+  overflow: hidden;
+}
+
+.work-detail-image-container,
+.work-detail-text {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.work-detail-image-container::-webkit-scrollbar,
+.work-detail-text::-webkit-scrollbar {
+  display: none;
 }
 
 .work-detail-image {
@@ -227,40 +264,87 @@ ol {
 }
 
 .work-detail-year {
-  font-size: 14px;
-  margin-bottom: 16px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .work-detail-title {
-  font-size: clamp(32px, 6vw, 72px);
-  line-height: 1.1;
-  margin: 0 0 16px;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .work-detail-sub-title {
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--text-sub);
 }
 
 .work-detail-skill {
-  font-size: 14px;
-  margin-bottom: 32px;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  color: var(--text-sub);
 }
 
 .work-detail-description {
-  font-size: 16px;
-  line-height: 1.9;
-  margin-bottom: 32px;
-}
-
-.work-detail-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
 }
 
 .work-detail-links a {
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.work-detail-links .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.work-detail-links .btn-outline {
+  border: 1px solid var(--text-hover);
+  color: var(--text-hover);
+  background: transparent;
+}
+
+.work-detail-links .btn-outline:hover,
+.work-detail-links .btn-outline:focus {
+  background: var(--text-hover);
+  color: var(--bg-color);
+  outline: none;
+}
+
+.work-detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.work-detail-gallery {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.work-detail-gallery-item {
+  width: 100%;
+  min-width: 0;
+}
+
+.work-detail-gallery-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: cover;
 }
 
 .work-detail-error {
@@ -268,12 +352,44 @@ ol {
 }
 
 @media (max-width: 768px) {
+  .page-work-detail {
+    overflow: auto;
+  }
+
+  .page-work-detail .container {
+    height: auto;
+    padding: 100px 15px;
+  }
+
+  .page-work-detail section {
+    margin-bottom: 60px;
+  }
+
   .work-detail {
     grid-template-columns: 1fr;
     gap: 32px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
   }
 
-  .work-detail-title {
-    font-size: 40px;
+  .work-detail-image-container,
+  .work-detail-text {
+    height: auto;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .work-detail-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .work-detail-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }

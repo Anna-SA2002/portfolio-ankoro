@@ -4,9 +4,10 @@
     "slug": "iamas2026-web",
     "sub-title": "WEB",
     "skill": "vue.js / Github",
-    "description": "これはテストです。",
+    "description": "これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。",
     "year": "2026",
     "image": "/assets/img/web/iamas2026.webp",
+    "galleryImages": [],
     "url": "",
     "reference": "https://www.iamas.ac.jp/exhibit26/"
   },
@@ -18,17 +19,19 @@
     "description": "",
     "year": "2026",
     "image": "/assets/img/iamas/iamas-01.webp",
+    "galleryImages": [],
     "url": "",
     "reference": "https://www.iamas.ac.jp/exhibit26/works/sato_anna"
   },
   {
     "title": "変身",
     "slug": "henshin",
-    "sub-title": "performance",
+    "sub-title": "AR performance",
     "skill": "open house",
     "description": "",
     "year": "2025",
     "image": "/assets/img/illustration/other/openhouse.webp",
+    "galleryImages": [],
     "url": "",
     "reference": "https://www.iamas.ac.jp/openhouse/"
   },
@@ -40,6 +43,11 @@
     "description": "",
     "year": "2024 ~ 2025",
     "image": "/assets/img/illustration/article/24-11.webp",
+    "galleryImages": [
+      "/assets/img/illustration/article/25-01.webp",
+      "/assets/img/illustration/article/25-03.webp",
+      "/assets/img/illustration/article/25-08.webp"
+    ],
     "url": "",
     "reference": "https://criticalcycling.com/author/anna-sato/"
   },
@@ -51,6 +59,11 @@
     "description": "",
     "year": "2024",
     "image": "/assets/img/AR/main.webp",
+    "galleryImages": [
+      "/assets/img/AR/AR-01.webp",
+      "/assets/img/AR/AR-02.webp",
+      "/assets/img/AR/AR-04.webp"
+    ],
     "url": "",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
   },
@@ -62,6 +75,7 @@
     "description": "",
     "year": "2023 ~",
     "image": "/assets/img/illustration/pastel/p-07.webp",
+    "galleryImages": [],
     "url": "./illustration.html",
     "reference": ""
   },
@@ -73,8 +87,13 @@
     "description": "",
     "year": "2023",
     "image": "/assets/img/p5/cake.webp",
+    "galleryImages": [
+      "/assets/img/p5/bubbles-01.webp",
+      "/assets/img/p5/bubbles-02.webp",
+      "/assets/img/p5/particle.webp"
+    ],
     "url": "",
-    "reference": ""
+    "reference": "https://editor.p5js.org/Toana/full/fM08d8igE"
   },
   {
     "title": "3Dモデリング",
@@ -84,6 +103,12 @@
     "description": "",
     "year": "2023",
     "image": "/assets/img/3d/3d-02.webp",
+    "galleryImages": [
+      "/assets/img/3d/3d-01.webp",
+      "/assets/img/3d/3d-05.webp",
+      "/assets/img/3d/3d-04.webp",
+      "/assets/img/3d/3d-03.webp"
+    ],
     "url": "",
     "reference": ""
   }
