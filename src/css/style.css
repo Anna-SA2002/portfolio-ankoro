@@ -1,6 +1,6 @@
 :root {
   --bg-color: #ffffff;
-  --accent-cyan: #b2f2f8;
+  --accent-cyan: #80e6ff;
   --accent-pink: #ffe4f0;
   --text-main: #333333;
   --text-sub: #777;
@@ -39,7 +39,7 @@ body {
 /* --- Header --- */
 .header-container {
   width: 100%;
-  padding: 20px 40px;
+  padding: 30px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,6 +55,7 @@ body {
   margin: 0 1rem;
   display: inline-block;
   border-bottom: 1px solid var(--text-main);
+  margin-bottom: 10px;
 }
 
 @media (max-width: 400px) {
@@ -80,7 +81,34 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 40px;
+}
+
+.nav-sketch-item {
+  width: 52px;
+  height: 52px;
+}
+
+.nav-cake-sketch {
+  width: 52px;
+  height: 52px;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  outline-offset: 4px;
+}
+
+.nav-cake-sketch canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.nav-cake-sketch:hover,
+.nav-cake-sketch:focus {
+  outline: none;
+  border: 1px solid var(--text-hover);
 }
 
 .logo a {
@@ -105,7 +133,7 @@ nav a:hover {
 }
 
 .container {
-  padding-top: 120px;
+  padding-top: 140px;
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -117,7 +145,7 @@ nav a:hover {
   -webkit-box-pack: start;
   justify-content: flex-start;
   display: inline-grid;
-  column-gap: 1em;
+  column-gap: 3em;
   grid-template-columns: repeat(3, auto);
 }
 
@@ -195,10 +223,11 @@ ol {
 
 .about-inner {
   max-width: 800px;
+  padding-bottom: 25px;
 }
 
 .about-my-name {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .about-text {
@@ -212,6 +241,7 @@ ol {
 
 .about-text h3 {
   margin-bottom: 1rem;
+  color: var(--text-main);
 }
 
 /* work detail page */
@@ -345,6 +375,43 @@ ol {
   aspect-ratio: 1 / 1;
   display: block;
   object-fit: cover;
+}
+
+.back-button {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-main);
+  background: var(--bg-color);
+  border: 1px solid var(--text-main);
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition:
+    transform 0.2s,
+    background-color 0.15s;
+}
+
+.back-button:hover,
+.back-button:focus {
+  transform: translateY(-2px);
+  background-color: var(--accent-cyan);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    top: 88px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
 }
 
 .work-detail-error {

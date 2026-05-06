@@ -46,7 +46,7 @@ async function loadWorks() {
         const href = getWorkHref(work);
 
         return `
-         <li>
+         <li class="works-card">
             <a href="${escapeHTML(href)}">
               <img
                 src="${escapeHTML(work.image)}"
