@@ -11,6 +11,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Outfit:wght@300;400;600&display=swap"
@@ -19,6 +23,8 @@
   </head>
 
   <body>
+    <canvas id="pixel-morse-background" aria-hidden="true"></canvas>
+
     <header class="header-container">
       <div class="logo">
         <a href="works.html">sato anna</a>
@@ -53,12 +59,16 @@
               <span class="music-gif-label">gif</span>
             </div>
           </div>
+
+          <p class="music-page-description">
+            ここでは、私の大好きな音楽を集めています。不定期更新。
+          </p>
         </div>
 
         <div class="music-layout">
           <div class="music-left-column">
             <div class="music-playlist-image" id="playlist-image">
-              <img src="/public/assets/img/illustration/pastel/p-05.png" />
+              <img src="/public/assets/img/illustration/other/touka_edge.png" />
             </div>
 
             <div id="spotify-player" class="spotify-embed-wrapper">
@@ -74,13 +84,14 @@
         </div>
 
         <div class="music-footer-label" id="music-footer-label">
-          <!-- JSONから動的に生成する -->
+          Spotify embed
         </div>
       </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
     <script type="module" src="./src/js/cake-sketch.js"></script>
+    <script type="module" src="./src/js/pixel-morse-background.js"></script>
     <script type="module" src="./src/js/music-playlist.js"></script>
   </body>
 </html>

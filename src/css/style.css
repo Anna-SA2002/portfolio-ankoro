@@ -384,7 +384,7 @@ ol {
 .back-button {
   position: fixed;
   bottom: 40px;
-  left: 40px;
+  left: 50px;
   width: 44px;
   height: 44px;
   display: inline-flex;

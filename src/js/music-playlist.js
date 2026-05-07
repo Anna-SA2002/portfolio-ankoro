@@ -1,6 +1,7 @@
 const updatedElement = document.querySelector("#playlist-updated");
 const playerContainer = document.querySelector("#spotify-player");
 const rowsContainer = document.querySelector("#track-rows-container");
+const playlistImage = document.querySelector("#playlist-image");
 
 const DATA_PATH = "/data/music-playlist.json";
 
@@ -46,6 +47,8 @@ async function loadMusicPlaylist() {
     renderUpdatedDate(data.page?.updated);
     renderTrackRows();
     updateSpotifyPlayer();
+    updateBackgroundColors(tracks[0]);
+    updatePlaylistImageBackground(tracks[0]);
   } catch (error) {
     console.error(error);
 
@@ -96,9 +99,11 @@ function renderTrackRows() {
 }
 
 function updateSpotifyPlayer() {
-  const selectedTrack = tracks.find((track) => {
-    return track.spotifyTrackId === selectedTrackId;
-  });
+  if (!playerContainer) {
+    return;
+  }
+
+  const selectedTrack = getSelectedTrack();
 
   if (!selectedTrack) {
     return;
@@ -119,16 +124,49 @@ function updateSpotifyPlayer() {
   `;
 }
 
-rowsContainer?.addEventListener("click", (event) => {
-  const clickedRow = event.target.closest(".music-track-row");
+function updateBackgroundColors(track) {
+  const colors = track?.backgroundColors;
 
-  if (!clickedRow) {
+  if (!colors) {
     return;
   }
 
-  const trackId = clickedRow.dataset.trackId;
+  window.dispatchEvent(
+    new CustomEvent("music-track-change", {
+      detail: {
+        mainColor: colors.main,
+        accentColor: colors.accent,
+      },
+    }),
+  );
+}
 
+function updatePlaylistImageBackground(track) {
+  if (!playlistImage) {
+    return;
+  }
+
+  const mainColor = track?.backgroundColors?.main ?? "#ffffff";
+
+  playlistImage.style.backgroundColor = mainColor;
+}
+
+function getSelectedTrack() {
+  return tracks.find((track) => {
+    return track.spotifyTrackId === selectedTrackId;
+  });
+}
+
+function selectTrack(trackId) {
   if (!trackId || selectedTrackId === trackId) {
+    return;
+  }
+
+  const selectedTrack = tracks.find((track) => {
+    return track.spotifyTrackId === trackId;
+  });
+
+  if (!selectedTrack) {
     return;
   }
 
@@ -136,6 +174,18 @@ rowsContainer?.addEventListener("click", (event) => {
 
   renderTrackRows();
   updateSpotifyPlayer();
+  updateBackgroundColors(selectedTrack);
+  updatePlaylistImageBackground(selectedTrack);
+}
+
+rowsContainer?.addEventListener("click", (event) => {
+  const clickedRow = event.target.closest(".music-track-row");
+
+  if (!clickedRow) {
+    return;
+  }
+
+  selectTrack(clickedRow.dataset.trackId);
 });
 
 loadMusicPlaylist();
