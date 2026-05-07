@@ -111,6 +111,10 @@ nav ul {
   border: 1px solid var(--text-hover);
 }
 
+.nav-cake-sketch-active {
+  border: 1px solid var(--text-hover);
+}
+
 .logo a {
   text-decoration: none;
   color: var(--text-main);
@@ -145,7 +149,7 @@ nav a:hover {
   -webkit-box-pack: start;
   justify-content: flex-start;
   display: inline-grid;
-  column-gap: 3em;
+  column-gap: 2.5em;
   grid-template-columns: repeat(3, auto);
 }
 

@@ -1,17 +1,15 @@
 const worksList = document.querySelector("#works-list");
 
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, (char) => {
-    const escapeMap = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#039;",
-    };
+const ESCAPE_MAP = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#039;",
+};
 
-    return escapeMap[char];
-  });
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ESCAPE_MAP[char]);
 }
 
 function getWorkHref(work) {
