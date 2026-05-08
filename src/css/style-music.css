@@ -177,10 +177,9 @@
   position: absolute;
   bottom: 15px;
   right: 40px;
-  font-size: 7px;
-  color: #ddd;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  letter-spacing: 0.05rem;
   pointer-events: none;
 }
 
