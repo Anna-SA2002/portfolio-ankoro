@@ -1,14 +1,11 @@
 :root {
   --bg-color: #ffffff;
   --accent-cyan: #80e6ff;
-  --accent-pink: #ffe4f0;
   --text-main: #333333;
   --text-sub: #777;
   --text-hover: #1fd2ff;
   --border-color: #eeeeee;
-  --card-bg: #ffffff;
   --font-gothic: "Outfit", "Noto Sans JP", sans-serif;
-  --font-mincho: "Sawarabi Mincho", serif;
 }
 
 * {
@@ -29,11 +26,6 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
 }
 
 /* --- Header --- */
@@ -72,10 +64,6 @@ section {
   width: 98%;
   max-width: 1000px;
   margin: 0 auto 60px;
-}
-
-nav {
-  margin-bottom: 0px;
 }
 
 nav ul {
@@ -145,16 +133,13 @@ nav a:hover {
 /* works page */
 
 .works-list {
+  list-style: none;
   flex-wrap: wrap;
   -webkit-box-pack: start;
   justify-content: flex-start;
   display: inline-grid;
   column-gap: 2.5em;
   grid-template-columns: repeat(3, auto);
-}
-
-ol {
-  list-style: none;
 }
 
 @media (max-width: 768px) {
@@ -175,7 +160,7 @@ ol {
   }
 }
 
-.works-list li {
+.works-card {
   width: 100%;
   padding: 0;
   margin: 0 0 20px 0;
@@ -297,7 +282,6 @@ ol {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-bottom: 0;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -305,13 +289,6 @@ ol {
 .work-detail-image-container::-webkit-scrollbar,
 .work-detail-text::-webkit-scrollbar {
   display: none;
-}
-
-.work-detail-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
 }
 
 .work-detail-year {
@@ -340,10 +317,6 @@ ol {
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
-}
-
-.work-detail-links a {
-  text-decoration: none;
 }
 
 .work-detail-links .btn {
@@ -466,7 +439,6 @@ ol {
   .work-detail-text {
     height: auto;
     overflow: visible;
-    padding-bottom: 0;
   }
 
   .work-detail-gallery {
@@ -483,3 +455,92 @@ ol {
 }
 
 /* index.html */
+
+.page-index::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../../public/assets/img/sora/sora-01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-index > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-index .header-container,
+.page-index .footer {
+  background-color: transparent;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  z-index: 10;
+}
+
+.footer nav {
+  width: 100%;
+}
+
+.footer nav ul {
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 0;
+}
+
+.footer nav li {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav-img {
+  align-items: center;
+}
+
+.footer-nav-img-button {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+
+.footer-nav-img-button:focus-visible {
+  outline: 1px solid var(--text-hover);
+}
+
+.footer-nav-img-button img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-nav-img-active {
+  opacity: 0;
+}
+
+.footer-nav-img-button:active .footer-nav-img-default {
+  opacity: 0;
+}
+
+.footer-nav-img-button:active .footer-nav-img-active {
+  opacity: 1;
+}

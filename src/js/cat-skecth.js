@@ -1,6 +1,5 @@
 (() => {
   const CONTAINER_ID = "cat-background";
-  const sparkleCount = 60;
 
   let pointerX = 0.5;
   let pointerY = 0.5;
@@ -15,7 +14,6 @@
   );
 
   const sketch = (p) => {
-    let positions = [];
     let palette = {};
 
     let rotX = 0;
@@ -38,7 +36,6 @@
       p.pixelDensity(Math.min(window.devicePixelRatio, 2));
 
       palette = createPalette();
-      positions = createSparkles();
     };
 
     p.draw = () => {
@@ -46,8 +43,6 @@
       const scale = objectSize / 315;
 
       p.clear();
-
-      drawSparkles();
 
       p.push();
       p.scale(scale);
@@ -69,7 +64,6 @@
 
     p.windowResized = () => {
       p.resizeCanvas(window.innerWidth, window.innerHeight);
-      positions = createSparkles();
     };
 
     function createPalette() {
@@ -78,26 +72,6 @@
         c2: p.random(200, 250),
         c3: p.random(200, 250),
       };
-    }
-
-    function createSparkles() {
-      return Array.from({ length: sparkleCount }, () => ({
-        x: p.random(-p.width / 2, p.width / 2),
-        y: p.random(-p.height / 2, p.height / 2),
-        size: p.random(1, 3),
-      }));
-    }
-
-    function drawSparkles() {
-      p.push();
-      p.noStroke();
-      p.fill(150, palette.c2, 250, 100);
-
-      positions.forEach((position) => {
-        p.circle(position.x, position.y, position.size);
-      });
-
-      p.pop();
     }
 
     function drawCatFace() {
@@ -129,11 +103,6 @@
 
         p.fill(palette.c1, palette.c2, palette.c3);
         p.cone(38, 55, 4);
-
-        p.translate(0, -5, 4);
-        p.fill(250, 250, 240);
-        p.noStroke();
-        p.cone(22, 35, 4);
 
         p.pop();
       });

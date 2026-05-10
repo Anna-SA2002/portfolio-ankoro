@@ -123,7 +123,7 @@
   appearance: none;
   width: 100%;
   display: grid;
-  grid-template-columns: 30px 1fr 50px;
+  grid-template-columns: 30px 1fr;
   padding: 14px 8px;
   border: 0;
   border-bottom: 1px solid var(--border-color);

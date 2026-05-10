@@ -56,6 +56,24 @@
         "main": "#6BC6FF",
         "accent": "#C8DFE4"
       }
+    },
+    {
+      "spotifyTrackId": "2oV9ZUXwNvLZl9IDZwiiZW",
+      "name": "DIVER",
+      "artist": "やくしまるえつこ, 塊魂 シリーズ SOUND TEAM, Bandai Namco Game Music",
+      "backgroundColors": {
+        "main": "#60C150",
+        "accent": "#FF8F5B"
+      }
+    },
+    {
+      "spotifyTrackId": "3VKZjdBctv0QCgboxzjqxV",
+      "name": "邂逅",
+      "artist": "綿菓子かんろ",
+      "backgroundColors": {
+        "main": "#162A2E",
+        "accent": "#6F91AB"
+      }
     }
   ]
 }
