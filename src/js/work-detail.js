@@ -48,9 +48,7 @@ function createGalleryImages(work) {
 }
 
 function createDescription(description) {
-  const paragraphs = Array.isArray(description)
-    ? description
-    : [description];
+  const paragraphs = Array.isArray(description) ? description : [description];
 
   const descriptionHTML = paragraphs
     .filter((text) => String(text ?? "").trim())
@@ -131,9 +129,10 @@ async function loadWorkDetail() {
         <p class="work-detail-year">${escapeHTML(work.year)}</p>
         <h2 class="work-detail-title">${escapeHTML(work.title)}</h2>
         <p class="work-detail-sub-title">${escapeHTML(work["sub-title"])}</p>
-        <p class="work-detail-skill">${escapeHTML(work.skill)}</p>
 
         ${createDescription(work.description)}
+
+        <p class="work-detail-skill">skills & tools : ${escapeHTML(work.skill)}</p>
 
         <div class="work-detail-links">
           ${referenceLink}

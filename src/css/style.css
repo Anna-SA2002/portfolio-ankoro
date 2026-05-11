@@ -303,7 +303,7 @@ nav a:hover {
 
 .work-detail-sub-title {
   font-size: 0.9rem;
-  margin: 0;
+  margin-bottom: 2rem;
   color: var(--text-sub);
 }
 
