@@ -316,6 +316,10 @@ nav a:hover {
 .work-detail-description {
   font-size: 1rem;
   line-height: 1.8;
+  margin: 0 0 1rem;
+}
+
+.work-detail-description:last-of-type {
   margin-bottom: 2rem;
 }
 

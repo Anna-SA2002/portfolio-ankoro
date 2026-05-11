@@ -47,6 +47,32 @@ function createGalleryImages(work) {
     .join("");
 }
 
+function createDescription(description) {
+  const paragraphs = Array.isArray(description)
+    ? description
+    : [description];
+
+  const descriptionHTML = paragraphs
+    .filter((text) => String(text ?? "").trim())
+    .map(
+      (text) => `
+        <p class="work-detail-description">
+          ${escapeHTML(text)}
+        </p>
+      `,
+    )
+    .join("");
+
+  return (
+    descriptionHTML ||
+    `
+      <p class="work-detail-description">
+        準備中.......
+      </p>
+    `
+  );
+}
+
 async function loadWorkDetail() {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
@@ -107,9 +133,7 @@ async function loadWorkDetail() {
         <p class="work-detail-sub-title">${escapeHTML(work["sub-title"])}</p>
         <p class="work-detail-skill">${escapeHTML(work.skill)}</p>
 
-        <p class="work-detail-description">
-          ${escapeHTML(work.description || "準備中.......")}
-        </p>
+        ${createDescription(work.description)}
 
         <div class="work-detail-links">
           ${referenceLink}
