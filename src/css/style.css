@@ -460,11 +460,18 @@ nav a:hover {
 
 /* index.html */
 
+.page-index {
+  --index-bg-width: max(100vw, calc(100vh * 4 / 3));
+  --index-bg-height: max(100vh, calc(100vw * 3 / 4));
+  --index-illust-size: 60% auto;
+}
+
 .page-index::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: url("../../public/assets/img/sora/sora-01.jpg");
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -472,7 +479,36 @@ nav a:hover {
   z-index: 0;
 }
 
-.page-index > * {
+.page-index::after {
+  content: "";
+  position: fixed;
+  left: 90%;
+  top: 75%;
+  width: var(--index-bg-width);
+  height: var(--index-bg-height);
+  background-image: url("../../public/assets/img/illustration/web-inner/index.webp");
+  background-size: var(--index-illust-size);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.index-illust-mirror {
+  position: fixed;
+  left: 10%;
+  top: 80%;
+  width: var(--index-bg-width);
+  height: var(--index-bg-height);
+  background-image: url("../../public/assets/img/illustration/web-inner/index-white.webp");
+  background-size: var(--index-illust-size);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scaleX(-1);
+  z-index: 0;
+}
+
+.page-index > :not(.index-illust) {
   position: relative;
   z-index: 1;
 }
