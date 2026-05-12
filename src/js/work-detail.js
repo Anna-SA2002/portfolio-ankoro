@@ -12,12 +12,20 @@ function escapeHTML(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => ESCAPE_MAP[char]);
 }
 
+function getAssetPath(path) {
+  return `${import.meta.env.BASE_URL}${String(path ?? "").replace(/^\/+/, "")}`;
+}
+
+function getPagePath(path) {
+  return `${import.meta.env.BASE_URL}${String(path ?? "").replace(/^\/+/, "")}`;
+}
+
 function showError(message) {
   workDetail.innerHTML = `
     <div class="work-detail-error">
       <h1>作品が見つかりませんでした</h1>
       <p>${escapeHTML(message)}</p>
-      <a href="./works.html">works一覧へ戻る</a>
+      <a href="${escapeHTML(getPagePath("works.html"))}">works一覧へ戻る</a>
     </div>
   `;
 }
@@ -28,7 +36,7 @@ function createGalleryImages(work) {
     : [];
 
   return galleryImages
-    .map((src, index) => {
+    .map((src) => {
       if (!src) {
         return "";
       }
@@ -37,8 +45,8 @@ function createGalleryImages(work) {
         <li class="work-detail-gallery-item">
           <img
             class="work-detail-gallery-image"
-            src="${escapeHTML(src)}"
-            alt="${escapeHTML(work.title)}の関連画像}"
+            src="${escapeHTML(getAssetPath(src))}"
+            alt="${escapeHTML(work.title)}の関連画像"
             loading="lazy"
           />
         </li>
@@ -72,6 +80,13 @@ function createDescription(description) {
 }
 
 async function loadWorkDetail() {
+  if (!workDetail) {
+    console.error(
+      "#work-detail が見つかりません。HTML側のidを確認してください。",
+    );
+    return;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
@@ -81,7 +96,7 @@ async function loadWorkDetail() {
   }
 
   try {
-    const response = await fetch("/data/works.json");
+    const response = await fetch(`${import.meta.env.BASE_URL}data/works.json`);
 
     if (!response.ok) {
       throw new Error("works.json の読み込みに失敗しました");
@@ -118,7 +133,7 @@ async function loadWorkDetail() {
       <div class="work-detail-image-container">
         <img
           class="work-detail-image"
-          src="${escapeHTML(work.image)}"
+          src="${escapeHTML(getAssetPath(work.image))}"
           alt="${escapeHTML(work.title)}のメイン画像"
         />
 

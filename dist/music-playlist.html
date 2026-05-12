@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>sato anna | music playlist</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/portfolio-ankoro/assets/musicPlaylist-DrQFb-FX.js"></script>
+    <link rel="modulepreload" crossorigin href="/portfolio-ankoro/assets/cake-sketch-B1y5QAFS.js">
+    <link rel="stylesheet" crossorigin href="/portfolio-ankoro/assets/cake-sketch-61GEdUks.css">
+    <link rel="stylesheet" crossorigin href="/portfolio-ankoro/assets/musicPlaylist-BuoxHAD6.css">
+  </head>
+
+  <body>
+    <canvas id="pixel-morse-background" aria-hidden="true"></canvas>
+
+    <header class="header-container">
+      <div class="logo">
+        <a href="index.html">sato anna</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li class="nav-sketch-item">
+            <a
+              class="nav-cake-sketch nav-cake-sketch-active"
+              href="music-playlist.html"
+              id="cake-sketch"
+              role="img"
+            ></a>
+          </li>
+          <li><a class="list-item-color" href="works.html">works</a></li>
+          <li><a href="about.html">about</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section>
+        <div class="music-page-header">
+          <div class="music-title-row">
+            <h1 id="music-title">favorite sounds</h1>
+
+            <span class="music-last-updated" id="playlist-updated">
+              <!-- JSONから動的に生成する -->
+            </span>
+
+            <!-- <div class="music-gif-item">
+              <span class="music-gif-label">gif</span>
+            </div> -->
+          </div>
+
+          <p class="music-page-description">
+            ここでは、私の大好きな音楽を紹介します。不定期更新。
+          </p>
+        </div>
+
+        <div class="music-layout">
+          <div class="music-left-column">
+            <div class="music-playlist-image" id="playlist-image">
+              <img
+                src="/portfolio-ankoro/assets/music-white-tgtSs-W4.webp"
+              />
+            </div>
+
+            <div id="spotify-player" class="spotify-embed-wrapper">
+              <!-- JSONから動的に生成する -->
+            </div>
+          </div>
+
+          <div class="music-right-column">
+            <div id="track-rows-container">
+              <!-- JSONから動的に生成する -->
+            </div>
+          </div>
+        </div>
+
+        <div class="music-footer-label">Spotify embed</div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@ const playerContainer = document.querySelector("#spotify-player");
 const rowsContainer = document.querySelector("#track-rows-container");
 const playlistImage = document.querySelector("#playlist-image");
 
-const DATA_PATH = "/data/music-playlist.json";
+const DATA_PATH = `${import.meta.env.BASE_URL}data/music-playlist.json`;
 
 const ESCAPE_MAP = {
   "&": "&amp;",

@@ -11,7 +11,7 @@
       "私は主に、ホームの2カラムのデザインと実装、各作品ページの2カラムのデザインと実装、ごあいさつ文の実装、その他細かいスタイル調整を担当しました。特に、卒展当日はWEBサイトがパンフレットとして機能することを意識して、スマホでも情報が見やすくなるようにレスポンシブ対応に気をつけました。"
     ],
     "year": "2026",
-    "image": "/assets/img/web/iamas2026.webp",
+    "image": "assets/img/web/iamas2026.webp",
     "galleryImages": [],
     "url": "",
     "reference": "https://www.iamas.ac.jp/exhibit26/events/ai-design-project"
@@ -29,11 +29,11 @@
       "”本作は、痛みや欲望を抱える「リアルな身体」と単純化された「キャラ化した身体」の対比される2つの身体をテーマに、長時間のパフォーマンスで表現する。憧れの身体との重なり合わなさや、身体の不恰好さ、繰り返される機械的な動きによる「滑稽さ」を見せながら、長時間行われることによる肉体の疲労・執着・記録の蓄積を他者と共有するパフォーマンスを披露する。”"
     ],
     "year": "2026",
-    "image": "/assets/img/iamas/iamas-01.webp",
+    "image": "assets/img/iamas/iamas-01.webp",
     "galleryImages": [
-      "/assets/img/iamas/iamas-02.webp",
-      "/assets/img/iamas/iamas-03.webp",
-      "/assets/img/iamas/iamas-04.webp"
+      "assets/img/iamas/iamas-02.webp",
+      "assets/img/iamas/iamas-03.webp",
+      "assets/img/iamas/iamas-04.webp"
     ],
     "url": "",
     "reference": "https://www.iamas.ac.jp/exhibit26/works/sato_anna"
@@ -50,7 +50,7 @@
       "”アバターという私の分身を通して生きる。そして、新しい私として振る舞うことで、現実世界で決められた「キャラ」から脱却する。「キャラ」とは、性格のことだけでなく、コミュニケーション・ネットワークにおける位置付けである。本作品は、拡張現実（AR）によりアバターの存在感を与え、鑑賞者との繋がりを持ちながら私が現実世界で生きていくことを諦めないためのパフォーマンス作品である。”"
     ],
     "year": "2025",
-    "image": "/assets/img/illustration/other/openhouse.webp",
+    "image": "assets/img/illustration/other/openhouse.webp",
     "galleryImages": [],
     "url": "",
     "reference": "https://www.iamas.ac.jp/openhouse/"
@@ -66,11 +66,11 @@
       "また、サムネイル画像もこだわりながら制作しました。実際に自転車で向かった先で撮影した風景写真を背景に使い、そこに2次元キャラクターを重ねて描くことで、漫画のワンシーンを切り取ったようなイラストをサムネイルのコンセプトにしていました。"
     ],
     "year": "2024 ~ 2025",
-    "image": "/assets/img/illustration/article/24-11.webp",
+    "image": "assets/img/illustration/article/24-11.webp",
     "galleryImages": [
-      "/assets/img/illustration/article/25-01.webp",
-      "/assets/img/illustration/article/25-03.webp",
-      "/assets/img/illustration/article/25-08.webp"
+      "assets/img/illustration/article/25-01.webp",
+      "assets/img/illustration/article/25-03.webp",
+      "assets/img/illustration/article/25-08.webp"
     ],
     "url": "",
     "reference": "https://criticalcycling.com/author/anna-sato/"
@@ -87,11 +87,11 @@
       "”バーチャル空間におけるアバターとは、一般的に操作者の分身という特性を持つ。この作品では既存のアバターの捉え方に加えて、新しい捉え方を鑑賞者に気付いてもらう事を目的にしている。キャラメイクをしたアバターが、空間内にARとして浮かび上がり、他の鑑賞者が制作したアバターと交流をしていたら？予測しない動きをとったら？私たちはアバターをどう感じるだろうか。アバターとは何か、ひいては自分らしいとは何かを作品を通して鑑賞者に考えてもらいたい。”"
     ],
     "year": "2024",
-    "image": "/assets/img/AR/main.webp",
+    "image": "assets/img/AR/main.webp",
     "galleryImages": [
-      "/assets/img/AR/AR-01.webp",
-      "/assets/img/AR/AR-02.webp",
-      "/assets/img/AR/AR-04.webp"
+      "assets/img/AR/AR-01.webp",
+      "assets/img/AR/AR-02.webp",
+      "assets/img/AR/AR-04.webp"
     ],
     "url": "",
     "reference": "https://www.iamas.ac.jp/openhouse/24/"
@@ -103,7 +103,7 @@
     "skill": "CLIP STUDIO PAINT",
     "description": [],
     "year": "2023 ~",
-    "image": "/assets/img/illustration/pastel/p-07.webp",
+    "image": "assets/img/illustration/pastel/p-07.webp",
     "galleryImages": [],
     "url": "./illustration.html",
     "reference": ""
@@ -117,11 +117,11 @@
       "p5.jsを使用してクエイティブコーディングにチャレンジしました。乱数を使って毎回異なる描写をさせたり、三角関数を使ってアニメーションに挑戦しました。"
     ],
     "year": "2023",
-    "image": "/assets/img/p5/cake.webp",
+    "image": "assets/img/p5/cake.webp",
     "galleryImages": [
-      "/assets/img/p5/bubbles-01.webp",
-      "/assets/img/p5/bubbles-02.webp",
-      "/assets/img/p5/particle.webp"
+      "assets/img/p5/bubbles-01.webp",
+      "assets/img/p5/bubbles-02.webp",
+      "assets/img/p5/particle.webp"
     ],
     "url": "",
     "reference": "https://editor.p5js.org/Toana/full/qHeqG2-bQ"
@@ -135,12 +135,12 @@
       "blenderを使用して、自作のキャラクターや家具などの初歩的3Dモデルの制作に取り組みました。また、WebGLを使って初音ミクを描画しました。特に、幾何学的な図形を地道に組み合わせて、ミニマルなオモチャっぽさを意識して制作しました。"
     ],
     "year": "2023",
-    "image": "/assets/img/3d/3d-02.webp",
+    "image": "assets/img/3d/3d-02.webp",
     "galleryImages": [
-      "/assets/img/3d/3d-05.webp",
-      "/assets/img/3d/3d-04.webp",
-      "/assets/img/3d/3d-01.webp",
-      "/assets/img/3d/3d-03.webp"
+      "assets/img/3d/3d-05.webp",
+      "assets/img/3d/3d-04.webp",
+      "assets/img/3d/3d-01.webp",
+      "assets/img/3d/3d-03.webp"
     ],
     "url": "",
     "reference": ""
