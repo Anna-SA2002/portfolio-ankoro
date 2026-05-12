@@ -1,0 +1,148 @@
+[
+  {
+    "title": "IAMAS2026 卒展WEBサイト",
+    "slug": "iamas2026-web",
+    "sub-title": "WEB",
+    "skill": "vue.js, GitHub",
+    "description": [
+      "情報科学芸術大学院大学 第24期生修了研究発表会(IAMAS 2026)に向けて、WEBサイトの共同開発に取り組みました。４人体制のチームで、GitHubでバージョン管理し、役割分担をしながら進めました。",
+      "また、チーム全体でAIを積極的に取り入れつつ、各々が主体的に制作に関われることを目指す、という方針で活動しました。「AIをどう使うか」ということを頻繁に話し合いながら、良い点・良くない点を整理し、各々が自分の制作スキルに合った使い方をすることを目指しました。",
+      "最終的な制作報告として、IAMAS2026のトークイベントも行いました。",
+      "私は主に、ホームの2カラムのデザインと実装、各作品ページの2カラムのデザインと実装、ごあいさつ文の実装、その他細かいスタイル調整を担当しました。特に、卒展当日はWEBサイトがパンフレットとして機能することを意識して、スマホでも情報が見やすくなるようにレスポンシブ対応に気をつけました。"
+    ],
+    "year": "2026",
+    "image": "assets/img/web/iamas2026.webp",
+    "galleryImages": [],
+    "url": "",
+    "reference": "https://www.iamas.ac.jp/exhibit26/events/ai-design-project"
+  },
+  {
+    "title": "かわいいかくれんぼ",
+    "slug": "kawaii-kakurenbo",
+    "sub-title": "performance",
+    "skill": "art work",
+    "description": [
+      "情報科学芸術大学院大学 第24期生修了研究発表会(IAMAS 2026)において、修士作品《かわいいかくれんぼ》を発表しました。",
+      "これは、私自身の身体を用いた長時間のパフォーマンス作品です。本作品でいう「キャラ化された身体」とは、複雑で多様な身体を単純化し、視覚的に操作可能な像へと変換した身体を指します。",
+      "パフォーマーが2次元の像を投影し、自撮り・自問自答を反復するなかで、「リアルな身体」の疲労やこわばり、成りきれなさが現れることが狙いです。本作品は、「キャラ化された身体」と「リアルな身体」を往復する中で生じる「滑稽さ」を捉えるための作品です。",
+      "以下、作品概要です。",
+      "”本作は、痛みや欲望を抱える「リアルな身体」と単純化された「キャラ化した身体」の対比される2つの身体をテーマに、長時間のパフォーマンスで表現する。憧れの身体との重なり合わなさや、身体の不恰好さ、繰り返される機械的な動きによる「滑稽さ」を見せながら、長時間行われることによる肉体の疲労・執着・記録の蓄積を他者と共有するパフォーマンスを披露する。”"
+    ],
+    "year": "2026",
+    "image": "assets/img/iamas/iamas-01.webp",
+    "galleryImages": [
+      "assets/img/iamas/iamas-02.webp",
+      "assets/img/iamas/iamas-03.webp",
+      "assets/img/iamas/iamas-04.webp"
+    ],
+    "url": "",
+    "reference": "https://www.iamas.ac.jp/exhibit26/works/sato_anna"
+  },
+  {
+    "title": "変身",
+    "slug": "henshin",
+    "sub-title": "AR / performance",
+    "skill": "mocopi",
+    "description": [
+      "IAMAS OPEN HOUSE 2025 の個人・有志企画にて、ARのパフォーマンス《変身》を発表しました。「決められた“キャラ”から抜け出し、他者とつながりながら自分らしく振る舞うこと」を目的に、アバターを通して鑑賞者とコミュニケーションを行うパフォーマンスを行いました。鑑賞者には、iPadに表示されたARアバター（猫耳のついた女の子のアバター）の私とコミュニケーションをとってもらいました。その際に、鑑賞者にも、白い毛糸でできた手作りの猫耳付き帽子を被ってもらうことで、「ぬいぐるみ的やさしさ」をお互いに共有したやさしいコミュニケーションを目指しました。",
+      "mocopiを着用して、私の身体とアバターの身体を接続しました。そして、mocopi専用アプリケーションのAR機能を使用することでパフォーマンスを実現しました。",
+      "以下、作品概要です。",
+      "”アバターという私の分身を通して生きる。そして、新しい私として振る舞うことで、現実世界で決められた「キャラ」から脱却する。「キャラ」とは、性格のことだけでなく、コミュニケーション・ネットワークにおける位置付けである。本作品は、拡張現実（AR）によりアバターの存在感を与え、鑑賞者との繋がりを持ちながら私が現実世界で生きていくことを諦めないためのパフォーマンス作品である。”"
+    ],
+    "year": "2025",
+    "image": "assets/img/illustration/other/openhouse.webp",
+    "galleryImages": [],
+    "url": "",
+    "reference": "https://www.iamas.ac.jp/openhouse/"
+  },
+  {
+    "title": "わたしはゆるく、自転車にのる。",
+    "slug": "yuru-chari",
+    "sub-title": "article",
+    "skill": "WordPress, CLIP STUDIO PAINT",
+    "description": [
+      "2024年11月から2025年8月にわたって、IAMASを中心に活動をしている「クリティカル・サイクリング（Critical Cycling）」が運営しているWEBサイトにて、「わたしはゆるく、自転車に乗る。」というシリーズの記事を連載しました。",
+      "タイトル名にもある通り、”ゆるく”続けることを目標にしました。技術的なことや作品制作記ではなく、「自転車について何も知らなかった私が、自転車に乗り始めてから発見したこと」を中心に、エッセイのような”ゆるさ”で発信していくことを重視していました。",
+      "また、サムネイル画像もこだわりながら制作しました。実際に自転車で向かった先で撮影した風景写真を背景に使い、そこに2次元キャラクターを重ねて描くことで、漫画のワンシーンを切り取ったようなイラストをサムネイルのコンセプトにしていました。"
+    ],
+    "year": "2024 ~ 2025",
+    "image": "assets/img/illustration/article/24-11.webp",
+    "galleryImages": [
+      "assets/img/illustration/article/25-01.webp",
+      "assets/img/illustration/article/25-03.webp",
+      "assets/img/illustration/article/25-08.webp"
+    ],
+    "url": "",
+    "reference": "https://criticalcycling.com/author/anna-sato/"
+  },
+  {
+    "title": "アバターたちの空間",
+    "slug": "avatar-space",
+    "sub-title": "AR",
+    "skill": "Unity ARKit",
+    "description": [
+      "IAMAS OPEN HOUSE 2024 の個人・有志企画にて、同期と2人組のチーム「ねこぜ」としてARの作品《アバターたちの空間》を展示しました。「自分の分身であるアバターが手元を離れて動くこと」に着目し、鑑賞者にキャラクターメイキングをしてもらったアバターが、展示期間中、AR空間を自由に彷徨い、手を振ったり自由に踊ったりする作品です。iPadで気軽に体験できるようにしました。",
+      "私の役割は、主にUnityを使ったシステムの作成でした。もう一人の仲間にblenderでモデリングやデザインをしてもらい、それをUnityに取り込みました。そして、キャラクターメイキングの仕組みと、ARでアバターを表示する仕組みを実装しました。",
+      "以下、作品概要です。",
+      "”バーチャル空間におけるアバターとは、一般的に操作者の分身という特性を持つ。この作品では既存のアバターの捉え方に加えて、新しい捉え方を鑑賞者に気付いてもらう事を目的にしている。キャラメイクをしたアバターが、空間内にARとして浮かび上がり、他の鑑賞者が制作したアバターと交流をしていたら？予測しない動きをとったら？私たちはアバターをどう感じるだろうか。アバターとは何か、ひいては自分らしいとは何かを作品を通して鑑賞者に考えてもらいたい。”"
+    ],
+    "year": "2024",
+    "image": "assets/img/AR/main.webp",
+    "galleryImages": [
+      "assets/img/AR/AR-01.webp",
+      "assets/img/AR/AR-02.webp",
+      "assets/img/AR/AR-04.webp"
+    ],
+    "url": "",
+    "reference": "https://www.iamas.ac.jp/openhouse/24/"
+  },
+  {
+    "title": "illustration",
+    "slug": "illustration",
+    "sub-title": " ",
+    "skill": "CLIP STUDIO PAINT",
+    "description": [],
+    "year": "2023 ~",
+    "image": "assets/img/illustration/pastel/p-07.webp",
+    "galleryImages": [],
+    "url": "./illustration.html",
+    "reference": ""
+  },
+  {
+    "title": "クリエイティブ・コーディング",
+    "slug": "coding",
+    "sub-title": "creative coding",
+    "skill": "p5.js",
+    "description": [
+      "p5.jsを使用してクエイティブコーディングにチャレンジしました。乱数を使って毎回異なる描写をさせたり、三角関数を使ってアニメーションに挑戦しました。"
+    ],
+    "year": "2023",
+    "image": "assets/img/p5/cake.webp",
+    "galleryImages": [
+      "assets/img/p5/bubbles-01.webp",
+      "assets/img/p5/bubbles-02.webp",
+      "assets/img/p5/particle.webp"
+    ],
+    "url": "",
+    "reference": "https://editor.p5js.org/Toana/full/qHeqG2-bQ"
+  },
+  {
+    "title": "3Dモデリング",
+    "slug": "3d-modeling",
+    "sub-title": "3D modeling",
+    "skill": "blender",
+    "description": [
+      "blenderを使用して、自作のキャラクターや家具などの初歩的3Dモデルの制作に取り組みました。また、WebGLを使って初音ミクを描画しました。特に、幾何学的な図形を地道に組み合わせて、ミニマルなオモチャっぽさを意識して制作しました。"
+    ],
+    "year": "2023",
+    "image": "assets/img/3d/3d-02.webp",
+    "galleryImages": [
+      "assets/img/3d/3d-05.webp",
+      "assets/img/3d/3d-04.webp",
+      "assets/img/3d/3d-01.webp",
+      "assets/img/3d/3d-03.webp"
+    ],
+    "url": "",
+    "reference": ""
+  }
+]
