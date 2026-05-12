@@ -1,0 +1,79 @@
+{
+  "page": {
+    "updated": "2024.05.07"
+  },
+  "tracks": [
+    {
+      "spotifyTrackId": "3JwZlCNuhQhHemUAemfGHa",
+      "name": "黄金の木木 - パソコン音楽クラブ Remix",
+      "artist": "花譜, パソコン音楽クラブ",
+      "backgroundColors": {
+        "main": "#253491",
+        "accent": "#FFF27C"
+      }
+    },
+    {
+      "spotifyTrackId": "3sDXtCWoXLKfm6HW5ZGwLi",
+      "name": "懐古主義わたし",
+      "artist": "笹川真生, 平塚紗依",
+      "backgroundColors": {
+        "main": "#F26927",
+        "accent": "#E0D9DB"
+      }
+    },
+    {
+      "spotifyTrackId": "7eWT36Oy6bZ9jE792hUV1W",
+      "name": "レトロポリス",
+      "artist": "R Sound Design, 可不",
+      "backgroundColors": {
+        "main": "#CBFFD6",
+        "accent": "#00FFFF"
+      }
+    },
+    {
+      "spotifyTrackId": "6sYJbalTgvb6uJtCIqfySm",
+      "name": "hikari",
+      "artist": "パソコン音楽クラブ, 長谷川白紙",
+      "backgroundColors": {
+        "main": "#1fd2ff",
+        "accent": "#FFF2A8"
+      }
+    },
+    {
+      "spotifyTrackId": "76UkyQIQFgIPzeE6u9vSOW",
+      "name": "cloud9",
+      "artist": "SEE",
+      "backgroundColors": {
+        "main": "#6496E9",
+        "accent": "#263351"
+      }
+    },
+    {
+      "spotifyTrackId": "4mDoYdwFGi5nPwwGIKqQnF",
+      "name": "風をあつめて",
+      "artist": "はっぴいえんど",
+      "backgroundColors": {
+        "main": "#6BC6FF",
+        "accent": "#C8DFE4"
+      }
+    },
+    {
+      "spotifyTrackId": "2oV9ZUXwNvLZl9IDZwiiZW",
+      "name": "DIVER",
+      "artist": "やくしまるえつこ, 塊魂 シリーズ SOUND TEAM, Bandai Namco Game Music",
+      "backgroundColors": {
+        "main": "#60C150",
+        "accent": "#FF8F5B"
+      }
+    },
+    {
+      "spotifyTrackId": "3VKZjdBctv0QCgboxzjqxV",
+      "name": "邂逅",
+      "artist": "綿菓子かんろ",
+      "backgroundColors": {
+        "main": "#162A2E",
+        "accent": "#6F91AB"
+      }
+    }
+  ]
+}
