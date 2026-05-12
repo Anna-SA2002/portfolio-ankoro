@@ -12,6 +12,7 @@ export default defineConfig({
         work: resolve(__dirname, "work.html"),
         musicPlaylist: resolve(__dirname, "music-playlist.html"),
         about: resolve(__dirname, "about.html"),
+        illustration: resolve(__dirname, "illustration.html"),
       },
     },
   },

@@ -1,4 +1,4 @@
-import{n as e,t}from"./cake-sketch-B1y5QAFS.js";var n=e((()=>{var e=document.querySelector(`#work-detail`),t={"&":`&amp;`,"<":`&lt;`,">":`&gt;`,'"':`&quot;`,"'":`&#039;`};function n(e){return String(e??``).replace(/[&<>"']/g,e=>t[e])}function r(e){return`/portfolio-ankoro/${String(e??``).replace(/^\/+/,``)}`}function i(e){return`/portfolio-ankoro/${String(e??``).replace(/^\/+/,``)}`}function a(t){e.innerHTML=`
+import{n as e,t}from"./cake-sketch-C-HCrd5b.js";var n=e((()=>{var e=document.querySelector(`#work-detail`),t={"&":`&amp;`,"<":`&lt;`,">":`&gt;`,'"':`&quot;`,"'":`&#039;`};function n(e){return String(e??``).replace(/[&<>"']/g,e=>t[e])}function r(e){return`/portfolio-ankoro/${String(e??``).replace(/^\/+/,``)}`}function i(e){return`/portfolio-ankoro/${String(e??``).replace(/^\/+/,``)}`}function a(t){e.innerHTML=`
     <div class="work-detail-error">
       <h1>作品が見つかりませんでした</h1>
       <p>${n(t)}</p>
