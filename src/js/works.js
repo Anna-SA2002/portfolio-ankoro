@@ -31,7 +31,7 @@ async function loadWorks() {
   }
 
   try {
-    const response = await fetch("./data/works.json");
+    const response = await fetch("./public/data/works.json");
 
     if (!response.ok) {
       throw new Error("works.json の読み込みに失敗しました");
