@@ -461,61 +461,56 @@ nav a:hover {
 /* index.html */
 
 .page-index {
-  --index-bg-width: max(100vw, calc(100vh * 4 / 3));
-  --index-bg-height: max(100vh, calc(100vw * 3 / 4));
-  --index-illust-size: 60% auto;
+  min-height: 100dvh;
+  background-color: var(--bg-color);
 }
 
-.page-index::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("../../public/assets/img/sora/sora-01.jpg");
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  pointer-events: none;
-  z-index: 0;
+.index-container {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15vh;
 }
 
-.page-index::after {
-  content: "";
-  position: fixed;
-  left: 90%;
-  top: 75%;
-  width: var(--index-bg-width);
-  height: var(--index-bg-height);
-  background-image: url("../../public/assets/img/illustration/web-inner/index.webp");
-  background-size: var(--index-illust-size);
-  background-repeat: no-repeat;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+.index-visual-section {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-.index-illust-mirror {
-  position: fixed;
-  left: 10%;
-  top: 80%;
-  width: var(--index-bg-width);
-  height: var(--index-bg-height);
-  background-image: url("../../public/assets/img/illustration/web-inner/index-white.webp");
-  background-size: var(--index-illust-size);
-  background-repeat: no-repeat;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scaleX(-1);
-  z-index: 0;
-}
-
-.page-index > :not(.index-illust) {
+.index-visual-box {
   position: relative;
-  z-index: 1;
+  width: min(100%, 350px);
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+.index-visual-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .page-index .header-container,
 .page-index .footer {
   background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .index-container {
+    min-height: 100dvh;
+    padding-bottom: 15px;
+  }
+
+  .index-visual-box {
+    width: min(100%, 400px);
+    height: 300px;
+  }
 }
 
 .footer {
