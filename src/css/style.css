@@ -73,11 +73,6 @@ nav ul {
   gap: 40px;
 }
 
-.nav-sketch-item {
-  width: 52px;
-  height: 52px;
-}
-
 .nav-cake-sketch {
   width: 52px;
   height: 52px;
@@ -85,6 +80,10 @@ nav ul {
   overflow: hidden;
   text-decoration: none;
   outline-offset: 4px;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 20;
 }
 
 .nav-cake-sketch canvas {
@@ -145,6 +144,11 @@ nav a:hover {
 @media (max-width: 768px) {
   .container {
     padding: 100px 15px;
+  }
+
+  .nav-cake-sketch {
+    right: 16px;
+    bottom: 16px;
   }
 
   .works-list {
