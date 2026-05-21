@@ -475,29 +475,44 @@ nav a:hover {
 
 .index-visual-section {
   width: 100%;
-  max-width: none;
+  max-width: 1120px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
 }
 
 .index-visual-box {
   position: relative;
-  width: min(100%, 350px);
-  height: 100%;
+  flex: 0 1 clamp(100px, 17vw, 200px);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background-color: var(--bg-color);
 }
 
-.index-visual-image {
+.index-visual-image,
+.index-visual-box canvas {
   display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-.page-index .header-container,
-.page-index .footer {
+.index-visual-image {
+  width: 100%;
+  height: 100%;
+}
+
+.index-visual-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.box-color {
+  background-color: #ffd2dc;
+}
+
+.page-index .header-container {
   background-color: transparent;
 }
 
@@ -507,75 +522,11 @@ nav a:hover {
     padding-bottom: 15px;
   }
 
-  .index-visual-box {
-    width: min(100%, 400px);
-    height: 300px;
+  .index-visual-section {
+    gap: 24px;
   }
-}
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  background-color: var(--bg-color);
-  z-index: 10;
-}
-
-.footer nav {
-  width: 100%;
-}
-
-.footer nav ul {
-  width: 100%;
-  justify-content: space-evenly;
-  gap: 0;
-}
-
-.footer nav li {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.footer-nav-img {
-  align-items: center;
-}
-
-.footer-nav-img-button {
-  position: relative;
-  width: 52px;
-  height: 52px;
-  padding: 0;
-  border: 0;
-  cursor: pointer;
-  outline-offset: 4px;
-}
-
-.footer-nav-img-button:focus-visible {
-  outline: 1px solid var(--text-hover);
-}
-
-.footer-nav-img-button img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.footer-nav-img-active {
-  opacity: 0;
-}
-
-.footer-nav-img-button:active .footer-nav-img-default {
-  opacity: 0;
-}
-
-.footer-nav-img-button:active .footer-nav-img-active {
-  opacity: 1;
+  .index-visual-box {
+    flex-basis: min(100%, 280px);
+  }
 }
