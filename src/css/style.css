@@ -1,6 +1,6 @@
 :root {
   --bg-color: #ffffff;
-  --accent-cyan: #80e6ff;
+  --accent-cyan: #95ddff;
   --text-main: #333333;
   --text-sub: #777;
   --text-hover: #1fd2ff;
@@ -61,7 +61,7 @@ body {
 }
 
 section {
-  width: 98%;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto 60px;
 }
@@ -124,9 +124,7 @@ nav a:hover {
 }
 
 .container {
-  padding-top: 140px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 140px 60px 0 60px;
 }
 
 /* works page */
@@ -261,38 +259,36 @@ nav a:hover {
 }
 
 .page-work-detail .container {
-  height: 100vh;
+  height: 100dvh;
   padding-top: 120px;
   padding-bottom: 0;
 }
 
 .page-work-detail section {
+  height: 100%;
   margin-bottom: 0;
+  min-height: 0;
 }
 
 .work-detail {
   display: grid;
-  grid-template-columns: 1.7fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 40px;
   align-items: stretch;
 
-  height: 75vh;
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
 }
 
 .work-detail-image-container,
 .work-detail-text {
   height: 100%;
+  min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.work-detail-image-container::-webkit-scrollbar,
-.work-detail-text::-webkit-scrollbar {
-  display: none;
 }
 
 .work-detail-year {
@@ -318,13 +314,17 @@ nav a:hover {
 }
 
 .work-detail-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.8;
   margin: 0 0 1rem;
 }
 
 .work-detail-description:last-of-type {
   margin-bottom: 2rem;
+}
+
+.work-detail-links {
+  margin-bottom: 45px;
 }
 
 .work-detail-links .btn {
@@ -362,9 +362,9 @@ nav a:hover {
 .work-detail-gallery {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-top: 16px;
+  margin: 10px 0 45px;
 }
 
 .work-detail-gallery-item {
@@ -520,7 +520,7 @@ nav a:hover {
   background-color: transparent;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .index-container {
     min-height: 100dvh;
     padding-bottom: 15px;
