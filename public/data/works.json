@@ -137,10 +137,10 @@
     "year": "2023",
     "image": "assets/img/3d/3d-02.webp",
     "galleryImages": [
-      "assets/img/3d/3d-05.webp",
-      "assets/img/3d/3d-04.webp",
       "assets/img/3d/3d-01.webp",
-      "assets/img/3d/3d-03.webp"
+      "assets/img/3d/3d-03.webp",
+      "assets/img/3d/3d-05.webp",
+      "assets/img/3d/3d-04.webp"
     ],
     "url": "",
     "reference": ""

@@ -362,7 +362,7 @@ nav a:hover {
 .work-detail-gallery {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   gap: 10px;
   margin: 10px 0 45px;
 }
@@ -449,13 +449,6 @@ nav a:hover {
     overflow: visible;
   }
 
-  .work-detail-gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-}
-
-@media (max-width: 400px) {
   .work-detail-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
