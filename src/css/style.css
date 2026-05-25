@@ -1,6 +1,6 @@
 :root {
   --bg-color: #ffffff;
-  --accent-cyan: #95ddff;
+  --accent-cyan: #95e8ff;
   --text-main: #333333;
   --text-sub: #777;
   --text-hover: #1fd2ff;
@@ -260,7 +260,7 @@ nav a:hover {
 
 .page-work-detail .container {
   height: 100dvh;
-  padding-top: 120px;
+  padding-top: 140px;
   padding-bottom: 0;
 }
 
