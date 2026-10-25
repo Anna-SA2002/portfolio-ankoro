@@ -1,6 +1,6 @@
 {
   "page": {
-    "updated": "2024.05.07"
+    "updated": "2026.10.26"
   },
   "tracks": [
     {
@@ -26,7 +26,7 @@
       "name": "レトロポリス",
       "artist": "R Sound Design, 可不",
       "backgroundColors": {
-        "main": "#CBFFD6",
+        "main": "#263356",
         "accent": "#00FFFF"
       }
     },
@@ -73,6 +73,69 @@
       "backgroundColors": {
         "main": "#162A2E",
         "accent": "#6F91AB"
+      }
+    },
+    {
+      "spotifyTrackId": "5AhZc0O82PCwfb32mzrHCF",
+      "name": "嘘ップ",
+      "artist": "椎名もた",
+      "backgroundColors": {
+        "main": "#588DC4",
+        "accent": "#FAD4C0"
+      }
+    },
+    {
+      "spotifyTrackId": "4hTJX80GPyvoWHf720OegJ",
+      "name": "絶縁",
+      "artist": "Trooper Salute",
+      "backgroundColors": {
+        "main": "#BCE2E8",
+        "accent": "#FFD43A"
+      }
+    },
+    {
+      "spotifyTrackId": "5zSemuOZdFS1FUG1OJPuI8",
+      "name": "成れの果て",
+      "artist": "Trooper Salute",
+      "backgroundColors": {
+        "main": "#E9EBD5",
+        "accent": "#83CCD2"
+      }
+    },
+    {
+      "spotifyTrackId": "084zl8HE50PgWhWdWQYotM",
+      "name": "owari no kisetsu",
+      "artist": "Rei Harakami",
+      "backgroundColors": {
+        "main": "#737C3E",
+        "accent": "#BCE2E8"
+      }
+    },
+    {
+      "spotifyTrackId": "295kusLjoZwucB6oM2nKcS",
+      "name": "ワンダー",
+      "artist": "r-906, 初音ミク",
+      "backgroundColors": {
+        "main": "#0CC0CF",
+        "accent": "#D93338"
+      }
+    },
+    {
+      "spotifyTrackId": "3SGdZuhEV4WiDwsvpft4zp",
+      "name": "nekomeshi",
+      "artist": "やくしまるえつこ",
+      "backgroundColors": {
+        "main": "#A0D8EF",
+        "accent": "#F6BFBC"
+      }
+    },
+    {
+      "spotifyTrackId": "6ThaSOAHx0AvoCHDCm83tq",
+      "name": "冷たいマーメイド",
+      "artist": "Trooper Salute",
+      "backgroundColors": {
+        "main": "#638CAC",
+        "accent": "#F0A258"
       }
     }
   ]

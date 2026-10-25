@@ -24,6 +24,8 @@ if (canvas) {
   let lastTime = 0;
   let canvasWidth = 0;
   let canvasHeight = 0;
+  // A track-selection event activates drawing; lifecycle events alone cannot.
+  let isActivated = false;
 
   class Particle {
     constructor(laneY, initialX) {
@@ -116,10 +118,18 @@ if (canvas) {
       accentColor,
     };
 
+    if (!isActivated) {
+      isActivated = true;
+      resizeCanvas();
+    }
     drawFrame();
+    startAnimation();
   }
 
   function resizeCanvas() {
+    if (!isActivated) {
+      return;
+    }
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     canvasWidth = window.innerWidth;
@@ -156,6 +166,9 @@ if (canvas) {
   }
 
   function drawFrame() {
+    if (!isActivated) {
+      return;
+    }
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
     particles.forEach((particle) => {
@@ -182,6 +195,9 @@ if (canvas) {
   }
 
   function startAnimation() {
+    if (!isActivated || document.hidden) {
+      return;
+    }
     if (animationId || reducedMotionQuery.matches) {
       drawFrame();
       return;

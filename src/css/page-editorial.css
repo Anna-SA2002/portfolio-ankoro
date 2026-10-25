@@ -1,6 +1,17 @@
 /* Shared reading pages: the same rail and ink as Home/Works, with room for
    complete long-form content. Only these pages opt into this stylesheet. */
+@font-face {
+  font-family: "WorkHack";
+  src: url("../../public/assets/fonts/Hack-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .page-editorial {
+  --reading-max-width: 838px;
+  --reading-font-size: 16px;
+  --reading-line-height: 1.5;
   --text-main: #3c4248;
   --text-sub: #7d9bb6;
   --text-hover: #3c4248;
@@ -37,6 +48,11 @@
   white-space: nowrap;
 }
 
+.page-about .works-breadcrumb,
+.page-music .works-breadcrumb {
+  font-size: 20px;
+}
+
 .page-illustration .work-back-link {
   font-size: 20px;
 }
@@ -51,35 +67,83 @@
   background: #fff;
 }
 
-/* About: small labels form a quiet index alongside the unabridged text. */
-.page-about #cat-background {
-  opacity: 0.12;
+/* About and work descriptions share a full-width reading measure. */
+.page-about .container,
+.page-music .container {
+  font-family: "WorkHack", "Noto Sans JP", monospace;
+  font-size: 16px;
+  color: var(--text-main);
 }
 
 .page-about .about-my-name {
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.5;
   margin: 0 0 56px;
 }
 
+.page-about .about-inner {
+  max-width: var(--reading-max-width);
+  font-size: var(--reading-font-size);
+  line-height: var(--reading-line-height);
+}
+
 .page-about .about-text {
   display: grid;
-  grid-template-columns: 90px minmax(0, 1fr);
-  column-gap: 32px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
   margin-bottom: 56px;
 }
 
 .page-about .about-text h3 {
   margin: 0;
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--text-sub);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
 .page-about .about-text p {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+.contact-copy {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.contact-email {
+  appearance: none;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.contact-email:hover {
+  color: #7d9bb6;
+}
+
+.contact-copy-status {
+  flex-shrink: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: 12px;
+}
+
+.contact-copy-status:empty {
+  display: none;
 }
 
 /* Work: keep every image, paragraph, tool and reference in normal document flow. */
@@ -162,12 +226,8 @@
 }
 
 /* Music: retain the changing illustration/player and every selectable track. */
-.page-music #pixel-morse-background {
-  opacity: 0.16;
-}
-
 .page-music .music-page-header {
-  margin-bottom: 40px;
+  margin-bottom: 56px;
 }
 
 .page-music .music-title-row {
@@ -176,8 +236,9 @@
 }
 
 .page-music .music-title-row h1 {
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
   letter-spacing: 0;
 }
 
@@ -185,11 +246,12 @@
 .page-music .music-page-description {
   font-size: 16px;
   letter-spacing: 0;
+  color: var(--text-main);
 }
 
 .page-music .music-layout {
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
-  gap: 40px;
+  gap: 32px;
   overflow: visible;
   align-items: start;
 }
@@ -215,6 +277,8 @@
 }
 
 .page-music .music-track-row {
+  font-family: inherit;
+  font-size: 16px;
   grid-template-columns: 32px minmax(0, 1fr);
   gap: 8px;
   padding: 18px 12px;
@@ -236,8 +300,12 @@
 }
 
 .page-music .music-track-artist {
-  color: var(--text-sub);
-  font-size: 14px;
+  color: var(--text-main);
+  font-size: 16px;
+}
+
+.page-music .music-track-name {
+  font-weight: 700;
 }
 
 .page-music .music-track-row.is-playing {
@@ -253,7 +321,8 @@
   position: static;
   margin-top: 32px;
   text-align: right;
-  font-size: 14px;
+  font-size: 16px;
+  color: var(--text-main);
 }
 
 @media (min-width: 769px) {
@@ -322,6 +391,9 @@
 }
 
 @media (max-width: 768px) {
+  .page-editorial {
+    --reading-line-height: 1.9;
+  }
   .page-editorial .header-container {
     z-index: 10;
     padding: 24px 16px;
@@ -359,7 +431,10 @@
   }
 
   .page-about .about-my-name {
-    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .page-music .music-page-header {
     margin-bottom: 40px;
   }
 

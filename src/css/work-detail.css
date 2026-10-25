@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "WorkHack";
-  src: url("../../public/assets/fonts/Hack-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* A single reading column follows the Figma order. Original images stay whole. */
 .page-work-detail {
   --work-heading-top: 84px;
@@ -16,8 +8,8 @@
 
 .page-work-detail .work-detail {
   display: block;
-  max-width: 838px;
-  font-size: 16px;
+  max-width: var(--reading-max-width);
+  font-size: var(--reading-font-size);
 }
 
 .page-work-detail .work-detail-heading {
@@ -53,7 +45,7 @@
 .page-work-detail .work-detail-description {
   font-family: "WorkHack", "Noto Sans JP", monospace;
   font-weight: 400;
-  color: #000;
+  color: var(--text-main);
 }
 
 .page-work-detail .work-detail-title {
@@ -66,7 +58,7 @@
 .page-work-detail .work-detail-meta {
   font-size: 16px;
   line-height: 30px;
-  color: #000;
+  color: var(--text-main);
 }
 
 .page-work-detail .work-detail-image {
@@ -115,8 +107,8 @@
 }
 
 .page-work-detail .work-detail-description {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: var(--reading-font-size);
+  line-height: var(--reading-line-height);
   margin: 0 0 16px;
 }
 

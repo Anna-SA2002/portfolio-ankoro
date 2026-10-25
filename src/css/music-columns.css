@@ -1,0 +1,138 @@
+/* Music frame: navigation and artwork left, player and palettes right. */
+.page-editorial.page-music {
+  --music-art-top: calc(min(12.1dvh, 124px) + 3px + min(15.625dvh, 160px) + 152px);
+  display: block;
+  width: calc(100% - 140px);
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 127px;
+  height: 100dvh;
+  overflow: hidden;
+}
+/* Navigation inherits the shared Works/About coordinates and menu spacing. */
+.page-music .container {
+  position: relative;
+  padding: 0 0 80px;
+  height: 100%;
+  min-height: 0;
+}
+.page-music .music-playlist-image {
+  position: absolute;
+  /* Fit the complete square below navigation, leaving a viewport-bottom gap. */
+  bottom: 0px;
+  left: 11px;
+  width: min(600px, 47%, max(1px, calc(100dvh - var(--music-art-top) - 24px)));
+  max-width: none;
+  aspect-ratio: 1;
+  background: transparent;
+}
+.page-music .music-playlist-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Replace RGB exactly while preserving the drawing's original alpha. */
+  filter: url(#music-ink);
+}
+.music-ink-filter { position: absolute; pointer-events: none; }
+.page-music .music-listening {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  width: 47.46%;
+  margin-left: 51.08%;
+}
+.page-music .spotify-embed-wrapper {
+  width: min(100%, 406px);
+  height: 152px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+.page-music .music-last-updated {
+  margin-top: 52px;
+  font: 400 14px/30px "HeadUpDaisy", monospace;
+  color: #000;
+  flex-shrink: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--text-main);
+}
+/* Keep the divider and player stationary; only the palette viewport scrolls. */
+.page-music .music-palette-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+.page-music .music-track-list {
+  display: grid;
+  grid-template-columns: repeat(4, 97px);
+  justify-content: space-between;
+  gap: 74px 16px;
+  margin-top: 0;
+  padding: 22px 6px 6px;
+  border: 0;
+}
+.page-music .music-track-row {
+  display: flex;
+  width: 97px;
+  height: 49px;
+  padding: 0;
+  border: 1px solid var(--text-main);
+  background: transparent;
+  border-radius: 0;
+  gap: 0;
+  box-shadow: 0 3px 0 #fff, 0 3px 0 1px #3c4248;
+  transition: transform 35ms linear, box-shadow 35ms linear;
+  touch-action: manipulation;
+}
+.music-track-color { flex: 1; height: 100%; }
+.music-track-color + .music-track-color { border-left: 1px solid var(--text-main); }
+.page-music .music-track-row:hover { background: transparent; }
+/* A short, straight key travel compresses the white, outlined base. */
+.page-music .music-track-row:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #fff, 0 0 0 1px #3c4248;
+}
+.page-music .music-track-row:focus-visible { outline: 2px solid var(--text-main); outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) {
+  .page-music .music-track-row { transition: none; }
+  .page-music .music-track-row:hover,
+  .page-music .music-track-row:active { transform: none; }
+}
+.music-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .page-editorial.page-music {
+    --music-art-top: calc(min(10dvh, 80px) + 3px + min(15.625dvh, 160px) + 152px);
+    width: calc(100% - 80px);
+    padding-top: 83px;
+  }
+  .page-music .music-track-list { grid-template-columns: repeat(3, 80px); gap: 40px 12px; }
+  .page-music .music-track-row { width: 80px; height: 40px; }
+}
+@media (max-width: 768px) {
+  .page-editorial.page-music { width: 100%; padding: 0; }
+  .page-music .container { padding: 110px 24px 24px; min-height: 0; display: flex; flex-direction: column; }
+  .page-music .music-listening { width: 100%; margin: 0; order: 0; }
+  .page-music .music-playlist-image { display: none; }
+  .page-music .music-last-updated { margin-top: 40px; }
+  .page-music .music-track-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 20px; margin-top: 0; padding-top: 24px; }
+  .page-music .music-track-row { width: 100%; height: auto; aspect-ratio: 97 / 49; }
+}
+
+@media (max-height: 600px) {
+  .page-editorial.page-music { padding-top: 24px; }
+  .page-music .container { padding-bottom: 24px; }
+  .page-music .music-last-updated { margin-top: 16px; padding-bottom: 8px; }
+}
+@media (max-width: 768px) and (max-height: 600px) {
+  .page-editorial.page-music { padding-top: 0; }
+  .page-music .container { padding-top: 80px; }
+}

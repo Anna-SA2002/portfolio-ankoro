@@ -5,6 +5,7 @@
   --text-sub: #777;
   --text-hover: #1fd2ff;
   --border-color: #eeeeee;
+  --scrollbar-thumb: rgb(129, 197, 255);
   --font-gothic: "Outfit", "Noto Sans JP", sans-serif;
 }
 
@@ -13,8 +14,23 @@
   padding: 0;
   box-sizing: border-box;
 
-  scrollbar-color: var(--text-hover) var(--bg-color);
+  scrollbar-color: var(--scrollbar-thumb) var(--bg-color);
   scrollbar-width: thin;
+}
+
+/* Fallback for browsers using the WebKit scrollbar styling API. */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: var(--bg-color);
 }
 
 body {

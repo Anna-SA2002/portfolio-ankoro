@@ -21,21 +21,30 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/css/page-editorial.css" />
+    <link rel="stylesheet" href="./src/css/music-columns.css" />
   </head>
 
   <body class="page-editorial page-music">
+    <svg class="music-ink-filter" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="music-ink" color-interpolation-filters="sRGB">
+          <feFlood flood-color="#3C4248" result="ink" />
+          <feComposite in="ink" in2="SourceAlpha" operator="in" />
+        </filter>
+      </defs>
+    </svg>
     <canvas id="pixel-morse-background" aria-hidden="true"></canvas>
 
     <aside class="works-sidebar" aria-label="サイトナビゲーション">
       <span class="works-site-title">sato anna | portfolio</span>
       <nav class="works-breadcrumb" aria-label="現在位置">
-        <a href="index.html">home</a><span aria-hidden="true">〉</span><span aria-current="page">sounds</span>
+        <a href="index.html">home</a><span aria-hidden="true">〉</span><span aria-current="page">music</span>
       </nav>
       <nav class="works-menu" aria-label="メインナビゲーション">
         <ul>
           <li><a href="works.html">wroks</a></li>
           <li><a href="about.html">about</a></li>
-          <li><a href="music-playlist.html" aria-current="page" aria-label="音楽プレイリスト">?????</a></li>
+          <li><a href="music-playlist.html" aria-current="page" aria-label="音楽プレイリスト">music</a></li>
         </ul>
       </nav>
     </aside>
@@ -48,65 +57,26 @@
           <li><a href="index.html">home</a></li>
           <li><a href="works.html">works</a></li>
           <li><a href="about.html">about</a></li>
-          <li><a href="music-playlist.html" aria-current="page" aria-label="音楽プレイリスト">?????</a></li>
+          <li><a href="music-playlist.html" aria-current="page" aria-label="音楽プレイリスト">music</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="container">
-      <a
-        class="nav-cake-sketch nav-cake-sketch-active"
-        href="music-playlist.html"
-        id="cake-sketch"
-        role="img"
-        aria-label="music playlist"
-      ></a>
-
-      <section>
-        <div class="music-page-header">
-          <div class="music-title-row">
-            <h1 id="music-title">favorite sounds</h1>
-
-            <span class="music-last-updated" id="playlist-updated">
-              <!-- JSONから動的に生成する -->
-            </span>
-
-            <!-- <div class="music-gif-item">
-              <span class="music-gif-label">gif</span>
-            </div> -->
-          </div>
-
-          <p class="music-page-description">
-            ここでは、私の大好きな音楽を紹介します。不定期更新。
-          </p>
+      <h1 class="music-visually-hidden">Music playlist</h1>
+      <div class="music-playlist-image">
+        <img src="./public/assets/img/illustration/web-inner/music-figma.png" alt="ヘッドホンで音楽を聴く猫耳の女の子" width="600" height="600" />
+      </div>
+      <section class="music-listening" aria-label="音楽プレイリスト">
+        <div id="spotify-player" class="spotify-embed-wrapper"></div>
+        <p class="music-last-updated" id="playlist-updated"></p>
+        <div class="music-palette-scroll" role="region" aria-label="曲のカラーボックス" tabindex="0">
+          <div class="music-track-list" id="track-rows-container" role="group" aria-label="曲を選択"></div>
         </div>
-
-        <div class="music-layout">
-          <div class="music-left-column">
-            <div class="music-playlist-image" id="playlist-image">
-              <img
-                src="./public/assets/img/illustration/web-inner/music-white.webp" alt="音楽プレイリストのイラスト"
-              />
-            </div>
-
-            <div id="spotify-player" class="spotify-embed-wrapper">
-              <!-- JSONから動的に生成する -->
-            </div>
-          </div>
-
-          <div class="music-right-column">
-            <div id="track-rows-container">
-              <!-- JSONから動的に生成する -->
-            </div>
-          </div>
-        </div>
-
-        <div class="music-footer-label">Spotify embed</div>
       </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
-    <script type="module" src="./src/js/cake-sketch.js"></script>
     <script type="module" src="./src/js/pixel-morse-background.js"></script>
     <script type="module" src="./src/js/music-playlist.js"></script>
     <script type="module" src="./src/js/breadcrumb-typing.js"></script>
