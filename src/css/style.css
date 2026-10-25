@@ -28,6 +28,32 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background-color: rgb(129, 197, 255);
+  color: #fff;
+}
+
+/* Reserve the arrow outside the label so hovering never moves the menu. */
+:where(.home-menu, .works-menu, .header-container nav) a:is([href="works.html"], [href="about.html"], [href="music-playlist.html"]) {
+  position: relative;
+  display: inline-block;
+}
+
+:where(.home-menu, .works-menu, .header-container nav) a:is([href="works.html"], [href="about.html"], [href="music-playlist.html"])::after {
+  content: "→" / "";
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 0;
+  width: 1em;
+  color: #3c4248;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+:where(.home-menu, .works-menu, .header-container nav) a:is([href="works.html"], [href="about.html"], [href="music-playlist.html"]):is(:hover, :focus-visible)::after {
+  visibility: visible;
+}
+
 /* --- Header --- */
 .header-container {
   width: 100%;
@@ -863,5 +889,55 @@ nav a:hover {
   .works-sidebar {
     left: 40px;
     top: calc(min(10dvh, 80px) + 3px);
+  }
+}
+
+/* Type each breadcrumb character once, without changing its final layout. */
+.typing-accessible-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.typing-character {
+  position: relative;
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  animation: breadcrumb-letter 1ms step-end var(--typing-delay) forwards;
+}
+
+.typing-character::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0.15em;
+  width: 2px;
+  height: 1em;
+  background: currentColor;
+  pointer-events: none;
+  animation: breadcrumb-caret 90ms step-end var(--typing-delay) both;
+}
+
+@keyframes breadcrumb-letter {
+  to { opacity: 1; }
+}
+
+@keyframes breadcrumb-caret {
+  from { visibility: visible; }
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-character {
+    animation: none;
+    opacity: 1;
+  }
+  .typing-character::after {
+    display: none;
   }
 }

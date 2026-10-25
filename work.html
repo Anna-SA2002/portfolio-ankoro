@@ -11,9 +11,24 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Outfit:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./src/css/page-editorial.css" />
+    <link rel="stylesheet" href="./src/css/work-detail.css" />
   </head>
 
-  <body class="page-work-detail">
+  <body class="page-editorial page-work-detail">
+    <aside class="works-sidebar" aria-label="サイトナビゲーション">
+      <span class="works-site-title">sato anna | portfolio</span>
+      <nav class="works-breadcrumb" aria-label="作品一覧に戻る">
+        <a href="works.html" class="work-back-link">← back</a>
+      </nav>
+      <nav class="works-menu" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="works.html" aria-current="page">wroks</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="music-playlist.html" aria-label="音楽プレイリスト">?????</a></li>
+        </ul>
+      </nav>
+    </aside>
     <header class="header-container">
       <div class="logo">
         <a href="index.html">sato anna</a>
@@ -21,15 +36,17 @@
       <nav>
         <ul>
           <li><a href="index.html">home</a></li>
-          <li><a class="list-item-color" href="works.html">works</a></li>
+          <li><a href="works.html" aria-current="page">works</a></li>
           <li><a href="about.html">about</a></li>
+          <li><a href="music-playlist.html" aria-label="音楽プレイリスト">?????</a></li>
         </ul>
       </nav>
     </header>
 
-    <a href="works.html" class="back-button" aria-label="worksへ戻る">←</a>
+
 
     <main class="container">
+      <a href="works.html" class="back-button work-mobile-back" aria-label="worksへ戻る" data-typewriter>← back</a>
       <a
         class="nav-cake-sketch"
         href="music-playlist.html"
@@ -48,5 +65,6 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
     <script type="module" src="./src/js/cake-sketch.js"></script>
     <script type="module" src="./src/js/work-detail.js"></script>
+    <script type="module" src="./src/js/breadcrumb-typing.js"></script>
   </body>
 </html>

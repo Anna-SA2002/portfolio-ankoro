@@ -1,3 +1,5 @@
+import { setupWorkHeading } from "./work-heading.js";
+
 const workDetail = document.querySelector("#work-detail");
 
 const ESCAPE_MAP = {
@@ -113,7 +115,7 @@ async function loadWorkDetail() {
     document.title = `sato anna | ${work.title}`;
 
     const referenceLink = work.reference
-      ? `<a class="btn btn-outline" href="${escapeHTML(work.reference)}" target="_blank" rel="noopener noreferrer">related page</a>`
+      ? `<a class="btn btn-outline" href="${escapeHTML(work.reference)}" target="_blank" rel="noopener noreferrer">related page <span aria-hidden="true">→</span></a>`
       : "";
 
     const galleryImagesHTML = createGalleryImages(work);
@@ -130,30 +132,32 @@ async function loadWorkDetail() {
       : "";
 
     workDetail.innerHTML = `
+      <header class="work-detail-heading">
+        <h1 class="work-detail-title">${escapeHTML(work.title)}</h1>
+        <p class="work-detail-meta">${escapeHTML([String(work["sub-title"] ?? "").trim(), work.year].filter(Boolean).join(" / "))}</p>
+      </header>
+
       <div class="work-detail-image-container">
         <img
           class="work-detail-image"
           src="${escapeHTML(getAssetPath(work.image))}"
           alt="${escapeHTML(work.title)}のメイン画像"
         />
+      </div>
 
-        ${galleryHTML}
+      <div class="work-detail-summary">
+        <p class="work-detail-skill">skills & tools - ${escapeHTML(work.skill)}</p>
+
+        ${referenceLink ? `<div class="work-detail-links">${referenceLink}</div>` : ""}
       </div>
 
       <div class="work-detail-text">
-        <p class="work-detail-year">${escapeHTML(work.year)}</p>
-        <h2 class="work-detail-title">${escapeHTML(work.title)}</h2>
-        <p class="work-detail-sub-title">${escapeHTML(work["sub-title"])}</p>
-
         ${createDescription(work.description)}
-
-        <p class="work-detail-skill">skills & tools : ${escapeHTML(work.skill)}</p>
-
-        <div class="work-detail-links">
-          ${referenceLink}
-        </div>
       </div>
+
+      ${galleryHTML}
     `;
+    setupWorkHeading(workDetail.querySelector(".work-detail-heading"));
   } catch (error) {
     console.error(error);
     showError("データの読み込み中にエラーが発生しました。");
