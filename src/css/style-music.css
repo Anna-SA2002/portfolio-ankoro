@@ -69,7 +69,7 @@
 }
 
 .music-right-column::-webkit-scrollbar-thumb {
-  background-color: #eee;
+  background-color: var(--scrollbar-thumb);
   border-radius: 10px;
 }
 

@@ -1,7 +1,7 @@
 const updatedElement = document.querySelector("#playlist-updated");
 const playerContainer = document.querySelector("#spotify-player");
 const rowsContainer = document.querySelector("#track-rows-container");
-const playlistImage = document.querySelector("#playlist-image");
+
 
 const DATA_PATH = `${import.meta.env.BASE_URL}data/music-playlist.json`;
 
@@ -15,6 +15,7 @@ const ESCAPE_MAP = {
 
 let tracks = [];
 let selectedTrackId = "";
+let hasSelectedTrack = false;
 
 function escapeHTML(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => ESCAPE_MAP[char]);
@@ -47,8 +48,7 @@ async function loadMusicPlaylist() {
     renderUpdatedDate(data.page?.updated);
     renderTrackRows();
     updateSpotifyPlayer();
-    updateBackgroundColors(tracks[0]);
-    updatePlaylistImageBackground(tracks[0]);
+
   } catch (error) {
     console.error(error);
 
@@ -68,34 +68,25 @@ function renderUpdatedDate(updated) {
   updatedElement.textContent = updated ? `Update: ${updated}` : "";
 }
 
+// Preserve JSON order: the grid fills rows from left to right.
 function renderTrackRows() {
-  rowsContainer.innerHTML = tracks
-    .map((track, index) => {
-      const isPlaying = track.spotifyTrackId === selectedTrackId;
-
-      return `
-        <button
-          type="button"
-          class="music-track-row ${isPlaying ? "is-playing" : ""}"
-          data-track-id="${escapeHTML(track.spotifyTrackId)}"
-        >
-          <span class="music-track-index">
-            ${String(index + 1).padStart(2, "0")}
-          </span>
-
-          <span class="music-track-info">
-            <span class="music-track-name">
-              ${escapeHTML(track.name)}
-            </span>
-
-            <span class="music-track-artist">
-              ${escapeHTML(track.artist)}
-            </span>
-          </span>
-        </button>
-      `;
-    })
-    .join("");
+  rowsContainer.replaceChildren(...tracks.map((track, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "music-track-row";
+    button.dataset.trackId = track.spotifyTrackId;
+    button.setAttribute("aria-pressed", String(track.spotifyTrackId === selectedTrackId));
+    button.setAttribute("aria-label", (index + 1) + ". " + track.name + " — " + track.artist);
+    button.title = track.name + " — " + track.artist;
+    for (const key of ["main", "accent"]) {
+      const swatch = document.createElement("span");
+      swatch.className = "music-track-color";
+      swatch.setAttribute("aria-hidden", "true");
+      swatch.style.backgroundColor = track.backgroundColors?.[key] ?? "#ffffff";
+      button.append(swatch);
+    }
+    return button;
+  }));
 }
 
 function updateSpotifyPlayer() {
@@ -141,16 +132,6 @@ function updateBackgroundColors(track) {
   );
 }
 
-function updatePlaylistImageBackground(track) {
-  if (!playlistImage) {
-    return;
-  }
-
-  const mainColor = track?.backgroundColors?.main ?? "#ffffff";
-
-  playlistImage.style.backgroundColor = mainColor;
-}
-
 function getSelectedTrack() {
   return tracks.find((track) => {
     return track.spotifyTrackId === selectedTrackId;
@@ -158,7 +139,7 @@ function getSelectedTrack() {
 }
 
 function selectTrack(trackId) {
-  if (!trackId || selectedTrackId === trackId) {
+  if (!trackId || (hasSelectedTrack && selectedTrackId === trackId)) {
     return;
   }
 
@@ -171,11 +152,15 @@ function selectTrack(trackId) {
   }
 
   selectedTrackId = trackId;
+  hasSelectedTrack = true;
 
-  renderTrackRows();
+  // Preserve keyboard focus while switching tracks.
+  rowsContainer.querySelectorAll(".music-track-row").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.trackId === trackId));
+  });
   updateSpotifyPlayer();
   updateBackgroundColors(selectedTrack);
-  updatePlaylistImageBackground(selectedTrack);
+
 }
 
 rowsContainer?.addEventListener("click", (event) => {

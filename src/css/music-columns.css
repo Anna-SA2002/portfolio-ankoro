@@ -1,0 +1,146 @@
+/* Include both body classes so these overrides survive production CSS splitting. */
+/* Music frame: viewport-fitted artwork behind navigation, player and palettes. */
+.page-editorial.page-music {
+  --music-art-size: min(100dvh, 100vw);
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: calc(100% - 140px);
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 127px;
+  height: 100dvh;
+  overflow: hidden;
+}
+/* Navigation inherits the shared Works/About coordinates and menu spacing. */
+.page-editorial.page-music .container {
+  position: relative;
+  padding: 0 0 80px;
+  height: 100%;
+  min-height: 0;
+}
+.page-editorial.page-music .music-playlist-image {
+  position: fixed;
+  /* Fit the complete square to the viewport height, capped by its width.
+     Center vertically on tall screens and retain the centered desktop frame. */
+  top: calc((100dvh - var(--music-art-size)) / 2);
+  left: max(0px, (100vw - 1440px) / 2);
+  width: var(--music-art-size);
+  max-width: none;
+  aspect-ratio: 1;
+  background: transparent;
+  transform: scaleX(-1);
+  z-index: 0;
+  pointer-events: none;
+}
+.page-editorial.page-music .music-playlist-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Replace RGB exactly while preserving the drawing's original alpha. */
+  filter: url(#music-ink);
+}
+.music-ink-filter { position: absolute; pointer-events: none; }
+.page-editorial.page-music .music-listening {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  width: 47.46%;
+  margin-left: 51.08%;
+}
+.page-editorial.page-music .spotify-embed-wrapper {
+  width: min(100%, 406px);
+  height: 152px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+.page-editorial.page-music .music-last-updated {
+  margin-top: 52px;
+  font: 400 14px/30px "HeadUpDaisy", monospace;
+  color: #000;
+  flex-shrink: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--text-main);
+}
+/* Keep the divider and player stationary; only the palette viewport scrolls. */
+.page-editorial.page-music .music-palette-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+.page-editorial.page-music .music-track-list {
+  display: grid;
+  grid-template-columns: repeat(4, 97px);
+  justify-content: space-between;
+  gap: 74px 16px;
+  margin-top: 0;
+  padding: 22px 6px 6px;
+  border: 0;
+}
+.page-editorial.page-music .music-track-row {
+  display: flex;
+  width: 97px;
+  height: 49px;
+  padding: 0;
+  border: 1px solid var(--text-main);
+  background: transparent;
+  border-radius: 0;
+  gap: 0;
+  box-shadow: 0 3px 0 #fff, 0 3px 0 1px #3c4248;
+  transition: transform 35ms linear, box-shadow 35ms linear;
+  touch-action: manipulation;
+}
+.music-track-color { flex: 1; height: 100%; }
+.music-track-color + .music-track-color { border-left: 1px solid var(--text-main); }
+.page-editorial.page-music .music-track-row:hover { background: transparent; }
+/* A short, straight key travel compresses the white, outlined base. */
+.page-editorial.page-music .music-track-row:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #fff, 0 0 0 1px #3c4248;
+}
+.page-editorial.page-music .music-track-row:focus-visible { outline: 2px solid var(--text-main); outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) {
+  .page-editorial.page-music .music-track-row { transition: none; }
+  .page-editorial.page-music .music-track-row:hover,
+  .page-editorial.page-music .music-track-row:active { transform: none; }
+}
+.music-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .page-editorial.page-music {
+    width: calc(100% - 80px);
+    padding-top: 83px;
+  }
+  .page-editorial.page-music .music-track-list { grid-template-columns: repeat(3, 80px); gap: 40px 12px; }
+  .page-editorial.page-music .music-track-row { width: 80px; height: 40px; }
+}
+@media (max-width: 768px) {
+  .page-editorial.page-music { width: 100%; padding: 0; }
+  .page-editorial.page-music .container { padding: 110px 24px 24px; min-height: 0; display: flex; flex-direction: column; }
+  .page-editorial.page-music .music-listening { width: 100%; margin: 0; order: 0; }
+  .page-editorial.page-music .music-playlist-image { display: none; }
+  .page-editorial.page-music .music-last-updated { margin-top: 40px; }
+  .page-editorial.page-music .music-track-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 20px; margin-top: 0; padding-top: 24px; }
+  .page-editorial.page-music .music-track-row { width: 100%; height: auto; aspect-ratio: 97 / 49; }
+}
+
+@media (max-height: 600px) {
+  .page-editorial.page-music { padding-top: 24px; }
+  .page-editorial.page-music .container { padding-bottom: 24px; }
+  .page-editorial.page-music .music-last-updated { margin-top: 16px; padding-bottom: 8px; }
+}
+@media (max-width: 768px) and (max-height: 600px) {
+  .page-editorial.page-music { padding-top: 0; }
+  .page-editorial.page-music .container { padding-top: 80px; }
+}

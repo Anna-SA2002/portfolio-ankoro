@@ -24,6 +24,14 @@ const kiraKiraSketch = (p) => {
     p.noLoop();
     p.randomSeed(2);
     generateArt();
+    // Random placement can resize this panel without a window resize event.
+    new ResizeObserver(() => {
+      const size = getCanvasSize(container);
+      if (size !== p.width) {
+        p.resizeCanvas(size, size);
+        p.redraw();
+      }
+    }).observe(container);
   };
 
   p.draw = () => {

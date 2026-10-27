@@ -1,0 +1,446 @@
+/* Shared reading pages: the same rail and ink as Home/Works, with room for
+   complete long-form content. Only these pages opt into this stylesheet. */
+.page-editorial {
+  --reading-max-width: 838px;
+  --reading-font-size: 16px;
+  --reading-line-height: 1.5;
+  --text-main: #3c4248;
+  --text-sub: #7d9bb6;
+  --text-hover: #3c4248;
+  --border-color: #e4e9ed;
+  --font-gothic: "HeadUpDaisy", "Noto Sans JP", monospace;
+  font-family: var(--font-gothic);
+  font-size: 18px;
+  line-height: 1.9;
+  overflow: visible;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+.page-editorial .container {
+  min-width: 0;
+  height: auto;
+}
+
+.page-editorial section {
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+
+.page-editorial a:focus-visible,
+.page-editorial button:focus-visible {
+  outline: 2px solid #7d9bb6;
+  outline-offset: 4px;
+}
+
+.page-editorial .works-breadcrumb {
+  font-size: 16px;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.page-about .works-breadcrumb,
+.page-music .works-breadcrumb {
+  font-size: 20px;
+}
+
+.page-illustration .work-back-link {
+  font-size: 20px;
+}
+
+.page-illustration .message {
+  display: block;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.page-editorial .nav-cake-sketch {
+  background: #fff;
+}
+
+/* About and work descriptions share a full-width reading measure. */
+.page-about .container,
+.page-music .container {
+  font-family: "WorkHack", "Noto Sans JP", monospace;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.page-about .about-my-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 56px;
+}
+
+.page-about .about-inner {
+  max-width: var(--reading-max-width);
+  font-size: var(--reading-font-size);
+  line-height: var(--reading-line-height);
+}
+
+.page-about .about-text {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin-bottom: 56px;
+}
+
+.page-about .about-text h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.page-about .about-text p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.page-about .about-work-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contact-copy {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.contact-email {
+  appearance: none;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.contact-email:hover {
+  color: #7d9bb6;
+}
+
+.contact-copy-status {
+  flex-shrink: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: 12px;
+}
+
+.contact-copy-status:empty {
+  display: none;
+}
+
+/* Work: keep every image, paragraph, tool and reference in normal document flow. */
+.page-editorial .back-button {
+  position: static;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-bottom: 24px;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-sub);
+  transition: none;
+}
+
+.page-editorial .back-button:hover {
+  color: var(--text-main);
+  transform: none;
+}
+
+.page-editorial .work-detail {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  margin: 0;
+  align-items: start;
+}
+
+.page-editorial .work-detail-image-container,
+.page-editorial .work-detail-text {
+  height: auto;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+
+.page-editorial .work-detail-year {
+  font-size: 16px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.page-editorial .work-detail-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.page-editorial .work-detail-sub-title,
+.page-editorial .work-detail-skill {
+  font-size: 16px;
+}
+
+.page-editorial .work-detail-description {
+  font-size: 17px;
+  line-height: 1.95;
+  margin-bottom: 24px;
+}
+
+.page-editorial .work-detail-gallery {
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 24px 0 0;
+}
+
+.page-editorial .work-detail-gallery-image {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.page-editorial .work-detail-links .btn {
+  border-radius: 0;
+  font-size: 16px;
+  letter-spacing: 0;
+  transition: none;
+}
+
+/* Music: retain the changing illustration/player and every selectable track. */
+.page-music .music-page-header {
+  margin-bottom: 56px;
+}
+
+.page-music .music-title-row {
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.page-music .music-title-row h1 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.page-music .music-last-updated,
+.page-music .music-page-description {
+  font-size: 16px;
+  letter-spacing: 0;
+  color: var(--text-main);
+}
+
+.page-music .music-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  gap: 32px;
+  overflow: visible;
+  align-items: start;
+}
+
+.page-music .music-left-column,
+.page-music .music-right-column {
+  min-width: 0;
+  height: auto;
+  overflow: visible;
+  padding: 0;
+}
+
+.page-music .music-left-column {
+  gap: 24px;
+}
+
+.page-music .music-playlist-image {
+  display: block;
+}
+
+.page-music .music-playlist-image img {
+  display: block;
+}
+
+.page-music .music-track-row {
+  font-family: inherit;
+  font-size: 16px;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 8px;
+  padding: 18px 12px;
+  transition: none;
+}
+
+.page-music .music-track-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.page-music .music-track-name,
+.page-music .music-track-artist {
+  display: block;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.page-music .music-track-artist {
+  color: var(--text-main);
+  font-size: 16px;
+}
+
+.page-music .music-track-name {
+  font-weight: 700;
+}
+
+.page-music .music-track-row.is-playing {
+  background: #f0f4f7;
+  border-left-color: #7d9bb6;
+}
+
+.page-music .music-track-row:hover {
+  background: #f5f7f9;
+}
+
+.page-music .music-footer-label {
+  position: static;
+  margin-top: 32px;
+  text-align: right;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+@media (min-width: 769px) {
+  .page-editorial.page-illustration {
+    padding-top: calc(min(12.1dvh, 124px) + 3px);
+  }
+
+  .page-editorial {
+    width: 80.7%;
+    max-width: 1162px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    column-gap: 60px;
+    padding-top: 127px;
+  }
+
+  .page-editorial .header-container {
+    display: none;
+  }
+
+  .page-editorial .container {
+    grid-column: 2;
+    padding: 0 0 80px;
+  }
+
+  .page-editorial .nav-cake-sketch {
+    right: auto;
+    left: max(9.65vw, calc((100vw - 1162px) / 2));
+    bottom: 32px;
+  }
+
+  .page-editorial .works-sidebar {
+    z-index: 5;
+  }
+
+  .page-music .music-left-column {
+    position: sticky;
+    top: 40px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .page-editorial.page-illustration {
+    padding-top: calc(min(10dvh, 80px) + 3px);
+  }
+
+  .page-editorial .work-detail,
+  .page-music .music-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .page-music .music-left-column {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .page-music .music-playlist-image {
+    max-width: 320px;
+  }
+
+  .page-editorial .nav-cake-sketch {
+    left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-editorial {
+    --reading-line-height: 1.9;
+  }
+  .page-editorial .header-container {
+    z-index: 10;
+    padding: 24px 16px;
+    background: #fff;
+  }
+
+  .page-editorial .header-container ul {
+    gap: 24px;
+  }
+
+  .page-editorial .header-container a {
+    letter-spacing: 0;
+    transition: none;
+  }
+
+  .page-editorial .header-container a[aria-current="page"] {
+    color: #fff;
+    background: var(--text-main);
+  }
+
+  .page-editorial .container {
+    padding: 110px 24px 96px;
+  }
+
+  .page-editorial .work-detail,
+  .page-music .music-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .page-about .about-text {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .page-about .about-my-name {
+    margin-bottom: 40px;
+  }
+
+  .page-music .music-page-header {
+    margin-bottom: 40px;
+  }
+
+  .page-music .music-playlist-image {
+    max-width: 240px;
+  }
+
+  .page-music .music-left-column {
+    position: static;
+  }
+}

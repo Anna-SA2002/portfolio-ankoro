@@ -42,6 +42,9 @@ async function loadWorks() {
     worksList.innerHTML = works
       .map((work) => {
         const href = getWorkHref(work);
+        // List copy is independent of the full information on the detail page.
+        const title = work.listTitle ?? work.title;
+        const category = work.listCategory ?? work["sub-title"];
 
         return `
          <li class="works-card">
@@ -52,13 +55,10 @@ async function loadWorks() {
               />
               <div class="works-text">
                 <p class="works-name">
-                  ${escapeHTML(work.title)}
-                </p>
-                <p class="works-sub-name">
-                  ${escapeHTML(work["sub-title"])}
+                  ${escapeHTML(title)}
                 </p>
                 <p class="works-skill-year">
-                  ${escapeHTML(work.skill)} / ${escapeHTML(work.year)}
+                  ${escapeHTML([String(category ?? "").trim(), work.year].filter(Boolean).join("/"))}
                 </p>
               </div>
             </a>

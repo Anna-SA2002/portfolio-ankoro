@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sato anna</title>
+    <title>sato anna | portfolio</title>
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,43 +14,28 @@
   </head>
 
   <body class="page-index">
-    <header class="header-container">
-      <div class="logo">
-        <a href="index.html">sato anna</a>
-      </div>
-      <nav>
-        <ul>
-          <li><a class="list-item-color" href="index.html">home</a></li>
-          <li><a href="works.html">works</a></li>
-          <li><a href="about.html">about</a></li>
-        </ul>
-      </nav>
-    </header>
+    <main class="home-layout">
+      <header class="home-sidebar">
+        <span class="home-title">sato anna | portfolio</span>
+        <nav class="home-menu" aria-label="メインナビゲーション">
+          <ul>
+            <li><a href="works.html">wroks</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="music-playlist.html" aria-label="音楽プレイリスト">?????</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <main class="container index-container">
-      <a
-        class="nav-cake-sketch"
-        href="music-playlist.html"
-        id="cake-sketch"
-        role="img"
-        aria-label="music playlist"
-      ></a>
-
-      <section class="index-visual-section" aria-label="main visual">
-        <div class="index-visual-box">
-          <img
-            class="index-visual-image"
-            src="./public/assets/img/sora/sora-index.webp"
-            alt=""
-          />
+      <section class="home-gallery" aria-label="main visual">
+        <div class="home-panel">
+          <img src="./public/assets/img/sora/sora-01.jpg" alt="青い空と電線" />
         </div>
-        <div class="index-visual-box" id="kira-kira"></div>
-        <div class="index-visual-box box-color"></div>
+        <div class="home-panel" id="kira-kira" role="img" aria-label="パーティクルとキラキラの模様"></div>
+        <div class="home-panel home-panel-blue" aria-label="青色のパネル" role="img"></div>
       </section>
     </main>
-
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
-    <script type="module" src="./src/js/cake-sketch.js"></script>
+    <script type="module" src="./src/js/home-layout.js"></script>
     <script type="module" src="./src/js/kira-kira-sketch.js"></script>
   </body>
 </html>

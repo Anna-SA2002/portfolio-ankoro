@@ -11,11 +11,25 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Outfit:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./src/css/page-editorial.css" />
   </head>
 
-  <body>
+  <body class="page-editorial page-about">
     <div id="cat-background" aria-hidden="true"></div>
 
+    <aside class="works-sidebar" aria-label="サイトナビゲーション">
+      <span class="works-site-title">sato anna | portfolio</span>
+      <nav class="works-breadcrumb" aria-label="現在位置">
+        <a href="index.html">home</a><span aria-hidden="true">〉</span><a href="about.html" aria-current="page">about</a>
+      </nav>
+      <nav class="works-menu" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="works.html">wroks</a></li>
+          <li><a href="about.html" aria-current="page">about</a></li>
+          <li><a href="music-playlist.html" aria-label="音楽プレイリスト">?????</a></li>
+        </ul>
+      </nav>
+    </aside>
     <header class="header-container">
       <div class="logo">
         <a href="index.html">sato anna</a>
@@ -24,19 +38,13 @@
         <ul>
           <li><a href="index.html">home</a></li>
           <li><a href="works.html">works</a></li>
-          <li><a class="list-item-color" href="about.html">about</a></li>
+          <li><a href="about.html" aria-current="page">about</a></li>
+          <li><a href="music-playlist.html" aria-label="音楽プレイリスト">?????</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="container">
-      <a
-        class="nav-cake-sketch"
-        href="music-playlist.html"
-        id="cake-sketch"
-        role="img"
-        aria-label="music playlist"
-      ></a>
 
       <section class="about-inner">
         <h3 class="about-my-name">佐藤 杏南 / sato anna</h3>
@@ -50,26 +58,22 @@
         <div class="about-text about-text-main">
           <h3>profile</h3>
           <p>
-            2002年 福島県いわき市生まれ。<br />
-            2024年 福島大学理工学群共生システム理工学類 卒業。<br />
-            2026年 情報科学芸術大学院大学[IAMAS]メディア表現研究科 博士前期課程
-            在学中。
+            2002.01 福島県いわき市生まれ<br />
+            2024.03 福島大学 理工学群 共生システム理工学類 卒業<br />
+            2026.09 情報科学芸術大学院大学 [IAMAS] メディア表現研究科 博士前期課程 修了
           </p>
         </div>
 
         <div class="about-text about-text-main">
           <h3>history</h3>
           <p>
-            プログラミングと数学を学ぶために大学に進学し、グラフ描画のアルゴリズムの研究をして卒業しました。
-            また、教育についても関心があり、数学と情報の高等学校教諭普通免許状を取得しました。
-            <br /><br />
-            その後、遊べるXRの教材を作りたいと考え、IAMASに進学しました。
-            1年次はARを使った”遊び”の制作をしましたが、自分らしいテーマを模索する中で「”キャラ”を抜け出す」というテーマに興味を持ち、2年次はARのアバターや肉体を使ったパフォーマンスをいくつか実践しました。
-            <br />
-            修士作品では、《かわいいかくれんぼ》というパフォーマンスを発表しました。
-            この作品では、「リアルな身体」と「キャラ化した身体」をテーマに、２つの身体を往復する中で生じる「滑稽さ」に着目しました。
-            そして、長時間同じ動きを反復するパフォーマンスを行い、リアルな身体が背負う疲労や執着を顕わにすることを試みました。
-            <br /><br />
+            プログラミングと数学を学ぶために大学に進学し、グラフ描画のアルゴリズムの研究をして卒業しました。 また、教育についても関心があり、数学と情報の高等学校教諭普通免許状を取得しました。
+          </p>
+          <p>
+            その後、遊べるXRの教材を作りたいと考え、IAMASに進学しました。 1年次はARを使った”遊び”の制作をしました。しかし、２年次には自分らしいテーマに取り組みたいと考え、「自分のキャラを抜け出す」というテーマに興味を持つようになりました。私は自分の「大人しい」という印象を覆したかったからです。2年次は、様々なパフォーマンスを学内でも学外でも実施しました。最初は、ARのアバターを使ったパフォーマンスをいくつか実践していました。しかし、徐々に自分の肉体をみせることに関心が向き、自分の普段覆い隠しているものを取り払うようなパフォーマンスを行うようになりました。
+          </p>
+          <p>
+            修士作品では、《<a class="about-work-link" href="work.html?slug=kawaii-kakurenbo">かわいいかくれんぼ</a>》というパフォーマンスを発表しました。 この作品では、「リアルな身体」と「キャラ化された身体」をテーマに、２つの身体を往復する中で生じる「滑稽さ」に着目しました。 長時間同じ動きを反復するパフォーマンス作品であり、リアルな身体が背負う疲労や執着を顕わにすることを試みました。
           </p>
         </div>
 
@@ -91,26 +95,31 @@
             わたしはよく、自分が作ったもののルーツがどこにあるのかを考えます。
             <br />
             <br />
-            それを辿ると、自分１人だけではできなかったこと・ものがあったことにいつも気付かされます。
+            それを辿ると、「自分１人だけでは生まれなかったこと・もの」があったことにいつも気付かされます。
             わたしは、だれかに出会って、魅せられて、自分の引き出しが増やすことができるのです。
-            デジタルで、ビジュアルやコンテンツがエンターテインメントとして消費されやすい現代において、あらゆる対象との能動的な関わり方を考えていきたいです。
+            わたしはそうやって、能動的に自分について知っていくことが好きです。
             <br />
             <br />
             これからも、私自身が日々”遊び心”を持って小さな発見を繰り返し、「妙なもの」に対して「なんで惹かれるのだろう」ということを絶えず問いかけていきたいです。
+            デジタルで、ビジュアルやコンテンツがエンターテインメントとして消費されやすい現代において、あらゆる対象との能動的な関わり方を考えていきたいです。
             そして、自分の感性を豊かにしながら、ビジュアルを考える力だけでなく、それをデジタルで実現するコーディング力や伝える力もさらに伸ばしたいです。
           </p>
         </div>
 
         <div class="about-text about-text-main">
           <h3>contact</h3>
-          <p>anfumian8982@gmail.com</p>
+          <div class="contact-copy">
+            <button type="button" class="contact-email" id="copy-email" aria-label="メールアドレス anfumian8982@gmail.com をコピー" title="クリックしてコピー">anfumian8982@gmail.com</button>
+            <p class="contact-copy-status" id="copy-email-status" role="status"></p>
+          </div>
         </div>
       </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
-    <script type="module" src="./src/js/cake-sketch.js"></script>
     <script type="module" src="./src/js/cat-skecth.js" defer></script>
-    <script type="module" src="./src/js/works.js"></script>
+
+    <script type="module" src="./src/js/breadcrumb-typing.js"></script>
+    <script type="module" src="./src/js/copy-email.js"></script>
   </body>
 </html>

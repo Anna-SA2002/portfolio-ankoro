@@ -5,6 +5,7 @@
   --text-sub: #777;
   --text-hover: #1fd2ff;
   --border-color: #eeeeee;
+  --scrollbar-thumb: rgb(129, 197, 255);
   --font-gothic: "Outfit", "Noto Sans JP", sans-serif;
 }
 
@@ -13,8 +14,23 @@
   padding: 0;
   box-sizing: border-box;
 
-  scrollbar-color: var(--text-hover) var(--bg-color);
+  scrollbar-color: var(--scrollbar-thumb) var(--bg-color);
   scrollbar-width: thin;
+}
+
+/* Fallback for browsers using the WebKit scrollbar styling API. */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: var(--bg-color);
 }
 
 body {
@@ -26,6 +42,32 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgb(129, 197, 255);
+  color: #fff;
+}
+
+/* Reserve the arrow outside the label so hovering never moves the menu. */
+:where(.home-menu, .works-menu, .header-container nav) a:is([href="works.html"], [href="about.html"], [href="music-playlist.html"]) {
+  position: relative;
+  display: inline-block;
+}
+
+:where(.home-menu, .works-menu, .header-container nav) a:is([href="works.html"], [href="about.html"], [href="music-playlist.html"])::after {
+  content: "→" / "";
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 0;
+  width: 1em;
+  color: #3c4248;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+:where(.home-menu, .works-menu, .header-container nav) a:is([href="works.html"], [href="about.html"], [href="music-playlist.html"]):is(:hover, :focus-visible)::after {
+  visibility: visible;
 }
 
 /* --- Header --- */
@@ -525,5 +567,402 @@ nav a:hover {
 
   .index-visual-box {
     flex-basis: min(100%, 280px);
+  }
+}
+
+/* Shared local fonts for navigation, work titles, and reading pages. */
+@font-face {
+  font-family: "WorkHack";
+  src: url("../../public/assets/fonts/Hack-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HeadUpDaisy";
+  src: url("../../public/assets/fonts/x14y24pxHeadUpDaisy.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.page-index {
+  --home-ink: #3c4248;
+  height: 100dvh;
+  overflow: hidden;
+  color: var(--home-ink);
+  font-family: "HeadUpDaisy", "Courier New", monospace;
+}
+
+.home-layout {
+  --home-row-gap: clamp(24px, 16.6dvh, 170px);
+  height: 100dvh;
+  width: calc(100% - 19.3%);
+  max-width: 1162px;
+  margin: 0 auto;
+  padding: min(12.1dvh, 124px) 0 min(16.8dvh, 172px);
+  display: grid;
+  grid-template-columns: 292fr 727fr;
+  column-gap: 143px;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.home-sidebar {
+  padding-top: 3px;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.page-index a {
+  color: var(--home-ink);
+  text-decoration: none;
+}
+
+.page-index a:hover {
+  color: #426b8f;
+}
+
+.page-index a:focus-visible {
+  outline: 2px solid var(--home-ink);
+  outline-offset: 5px;
+}
+
+.home-title {
+  display: block;
+  white-space: nowrap;
+}
+
+.home-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.page-index nav a {
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.home-menu {
+  margin-top: min(15.625dvh, 160px);
+}
+
+.home-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.page-index .home-menu a {
+  display: inline-block;
+  transition: none;
+}
+
+.page-index .home-menu a:hover,
+.page-index .home-menu a:focus-visible {
+  background-color: var(--home-ink);
+  color: #fff;
+}
+
+.home-gallery {
+  position: relative;
+  container-type: size;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  column-gap: 137px;
+  row-gap: var(--home-row-gap);
+}
+
+.home-gallery.is-randomized {
+  display: block;
+}
+
+.home-gallery.is-randomized .home-panel {
+  position: absolute;
+}
+
+.home-panel {
+  position: relative;
+  width: min(100%, calc((100cqh - var(--home-row-gap)) * 298 / 566));
+  aspect-ratio: 298 / 276;
+  overflow: hidden;
+}
+
+.home-panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#kira-kira canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.home-panel-blue {
+  aspect-ratio: 298 / 283;
+  background: #81c5ff;
+}
+
+@media (max-width: 1100px) {
+  .home-layout {
+    width: calc(100% - 80px);
+    column-gap: 64px;
+    grid-template-columns: 245px minmax(0, 1fr);
+    padding-top: min(10dvh, 80px);
+  }
+
+  .home-gallery {
+    column-gap: 40px;
+  }
+
+}
+
+@media (max-width: 760px) {
+  .home-layout {
+    --home-row-gap: min(3dvh, 24px);
+    width: calc(100% - 48px);
+    max-width: 480px;
+    padding: min(4dvh, 40px) 0 min(4dvh, 40px);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    row-gap: min(4dvh, 32px);
+  }
+
+  .home-sidebar {
+    font-size: 17px;
+  }
+
+  .home-menu {
+    margin-top: min(3dvh, 24px);
+  }
+
+  .home-menu ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .home-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: var(--home-row-gap);
+  }
+
+  .home-panel {
+    width: min(100%, calc((100cqh - 2 * var(--home-row-gap)) * 298 / 849));
+  }
+
+}
+
+/* Works navigation and subtitles retain Home's pixel font. */
+.page-works {
+  --text-main: #3c4248;
+  --text-sub: #3c4248;
+  --text-hover: #3c4248;
+  font-family: "HeadUpDaisy", "Noto Sans JP", monospace;
+}
+
+.works-sidebar {
+  display: none;
+}
+
+.page-works .works-name {
+  font-family: "WorkHack", "Noto Sans JP", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.page-works .works-skill-year {
+  font-size: 14px;
+  line-height: 30px;
+  margin-top: 0;
+}
+
+.page-works .works-card a:hover,
+.page-works .works-card a:focus-visible {
+  background-color: transparent;
+}
+
+.page-works .works-card a:hover .works-name,
+.page-works .works-card a:hover .works-skill-year,
+.page-works .works-card a:focus-visible .works-name,
+.page-works .works-card a:focus-visible .works-skill-year {
+  color: #7d9bb6;
+}
+
+@media (min-width: 769px) {
+  .page-works {
+    width: 80.7%;
+    max-width: 1162px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    column-gap: 60px;
+    padding-top: 127px;
+  }
+
+  .page-works .header-container,
+  .page-works .nav-cake-sketch {
+    display: none;
+  }
+
+  .works-sidebar {
+    display: block;
+    position: fixed;
+    left: max(9.65vw, calc((100vw - 1162px) / 2));
+    top: calc(min(12.1dvh, 124px) + 3px);
+    width: 245px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .works-sidebar a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: inherit;
+    letter-spacing: 0;
+    transition: none;
+  }
+
+  .works-site-title {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .works-breadcrumb {
+    position: absolute;
+    top: 41px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .works-menu {
+    margin-top: min(15.625dvh, 160px);
+  }
+
+  .works-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .works-menu a[aria-current="page"],
+  .works-sidebar a:hover,
+  .works-sidebar a:focus-visible {
+    color: #fff;
+    background: var(--text-main);
+  }
+
+  .page-works .container {
+    grid-column: 2;
+    min-width: 0;
+    padding: 0 0 60px;
+  }
+
+  .page-works section {
+    max-width: none;
+    margin: 0;
+  }
+
+  .page-works .works-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px 60px;
+    width: 100%;
+  }
+
+  .page-works .works-card {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page-works .works-card a {
+    height: auto;
+  }
+
+  .page-works .works-card img {
+    display: block;
+    height: auto;
+    aspect-ratio: 420 / 297;
+  }
+
+  .page-works .works-text {
+    margin: 8px 0 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .works-sidebar {
+    left: 40px;
+    top: calc(min(10dvh, 80px) + 3px);
+  }
+}
+
+/* Type each breadcrumb character once, without changing its final layout. */
+.typing-accessible-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.typing-character {
+  position: relative;
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  animation: breadcrumb-letter 1ms step-end var(--typing-delay) forwards;
+}
+
+.typing-character::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0.15em;
+  width: 2px;
+  height: 1em;
+  background: currentColor;
+  pointer-events: none;
+  animation: breadcrumb-caret 90ms step-end var(--typing-delay) both;
+}
+
+@keyframes breadcrumb-letter {
+  to { opacity: 1; }
+}
+
+@keyframes breadcrumb-caret {
+  from { visibility: visible; }
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-character {
+    animation: none;
+    opacity: 1;
+  }
+  .typing-character::after {
+    display: none;
   }
 }
