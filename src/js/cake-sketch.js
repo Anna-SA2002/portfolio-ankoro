@@ -9,6 +9,10 @@
       const palette = {};
 
       function canvasSize() {
+        // The work page fills its media slot; navigation keeps its compact size.
+        if (sketchContainer.dataset.canvasSize === "container") {
+          return Math.max(1, sketchContainer.clientWidth);
+        }
         return Math.min(76, Math.max(52, sketchContainer.clientWidth));
       }
 

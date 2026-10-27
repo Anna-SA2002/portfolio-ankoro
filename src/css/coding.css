@@ -1,0 +1,21 @@
+/* Keep each sketch/video inside its editable media container without cropping. */
+.page-coding .img-container {
+  min-width: 0;
+}
+
+.page-coding .img-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.page-coding #cake-sketch {
+  aspect-ratio: 1;
+}
+
+.page-coding #cake-sketch canvas {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+}

@@ -1,6 +1,8 @@
-/* Music frame: navigation and artwork left, player and palettes right. */
+/* Music frame: viewport-fitted artwork behind navigation, player and palettes. */
 .page-editorial.page-music {
-  --music-art-top: calc(min(12.1dvh, 124px) + 3px + min(15.625dvh, 160px) + 152px);
+  --music-art-size: min(100dvh, 100vw);
+  position: fixed;
+  inset: 0;
   display: block;
   width: calc(100% - 140px);
   max-width: 1300px;
@@ -17,14 +19,18 @@
   min-height: 0;
 }
 .page-music .music-playlist-image {
-  position: absolute;
-  /* Fit the complete square below navigation, leaving a viewport-bottom gap. */
-  bottom: 0px;
-  left: 11px;
-  width: min(600px, 47%, max(1px, calc(100dvh - var(--music-art-top) - 24px)));
+  position: fixed;
+  /* Fit the complete square to the viewport height, capped by its width.
+     Center vertically on tall screens and retain the centered desktop frame. */
+  top: calc((100dvh - var(--music-art-size)) / 2);
+  left: max(0px, (100vw - 1440px) / 2);
+  width: var(--music-art-size);
   max-width: none;
   aspect-ratio: 1;
   background: transparent;
+  transform: scaleX(-1);
+  z-index: 0;
+  pointer-events: none;
 }
 .page-music .music-playlist-image img {
   display: block;
@@ -35,6 +41,8 @@
 }
 .music-ink-filter { position: absolute; pointer-events: none; }
 .page-music .music-listening {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -110,7 +118,6 @@
 }
 @media (min-width: 769px) and (max-width: 1100px) {
   .page-editorial.page-music {
-    --music-art-top: calc(min(10dvh, 80px) + 3px + min(15.625dvh, 160px) + 152px);
     width: calc(100% - 80px);
     padding-top: 83px;
   }

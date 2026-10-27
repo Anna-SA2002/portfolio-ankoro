@@ -570,7 +570,15 @@ nav a:hover {
   }
 }
 
-/* Home: match the Figma frame without changing shared page styles. */
+/* Shared local fonts for navigation, work titles, and reading pages. */
+@font-face {
+  font-family: "WorkHack";
+  src: url("../../public/assets/fonts/Hack-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "HeadUpDaisy";
   src: url("../../public/assets/fonts/x14y24pxHeadUpDaisy.ttf") format("truetype");
@@ -764,7 +772,7 @@ nav a:hover {
 
 }
 
-/* Works uses the same pixel font as Home; detail-page typography is independent. */
+/* Works navigation and subtitles retain Home's pixel font. */
 .page-works {
   --text-main: #3c4248;
   --text-sub: #3c4248;
@@ -777,6 +785,7 @@ nav a:hover {
 }
 
 .page-works .works-name {
+  font-family: "WorkHack", "Noto Sans JP", monospace;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;

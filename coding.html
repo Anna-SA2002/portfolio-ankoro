@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sato anna | クリエイティブ・コーディング</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/page-editorial.css" />
+    <link rel="stylesheet" href="./src/css/work-detail.css" />
+    <link rel="stylesheet" href="./src/css/coding.css" />
+  </head>
+
+  <body class="page-editorial page-work-detail page-coding">
+    <aside class="works-sidebar" aria-label="サイトナビゲーション">
+      <span class="works-site-title">sato anna | portfolio</span>
+      <nav class="works-breadcrumb" aria-label="作品一覧に戻る">
+        <a href="works.html" class="work-back-link">← back</a>
+      </nav>
+      <nav class="works-menu" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="works.html" aria-current="page">wroks</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="music-playlist.html" aria-label="音楽プレイリスト">?????</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <header class="header-container">
+      <div class="logo"><a href="index.html">sato anna</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="works.html" aria-current="page">works</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="music-playlist.html" aria-label="音楽プレイリスト">?????</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <a href="works.html" class="back-button work-mobile-back" aria-label="worksへ戻る" data-typewriter>← back</a>
+      <section>
+        <!-- Edit this page directly to customize the videos, copy, and order. -->
+        <article class="work-detail">
+          <header class="work-detail-heading">
+            <h1 class="work-detail-title">クリエイティブ・コーディング</h1>
+            <p class="work-detail-meta">creative coding / 2023</p>
+          </header>
+
+          <div class="img-container work-detail-image-container" id="cake-sketch" data-canvas-size="container" role="img" aria-label="p5.jsで描画したケーキのアニメーション"></div>
+
+          <div class="work-detail-summary">
+            <p class="work-detail-skill">skills &amp; tools - p5.js</p>
+            <div class="work-detail-links">
+              <a class="btn btn-outline" href="https://editor.p5js.org/AnnaSATO/sketches" target="_blank" rel="noopener noreferrer">related page <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="work-detail-text">
+            <p class="work-detail-description">p5.jsを使用してクエイティブコーディングにチャレンジしました。乱数を使って毎回異なる描写をさせたり、三角関数を使ってアニメーションに挑戦しました。</p>
+          </div>
+
+          <ul class="work-detail-gallery" aria-label="クリエイティブ・コーディングの関連動画">
+            <li class="work-detail-gallery-item img-container">
+              <video controls muted loop playsinline preload="metadata" poster="/assets/img/p5/bubbles-01.webp" aria-label="バブルのアニメーション 1">
+                <source src="/assets/img/p5/bubbles-01.mp4" type="video/mp4" />
+                <a href="./assets/img/p5/bubbles-01.mp4">動画を開く</a>
+              </video>
+            </li>
+            <li class="work-detail-gallery-item img-container">
+              <video controls muted loop playsinline preload="metadata" poster="/assets/img/p5/bubbles-02.webp" aria-label="バブルのアニメーション 2">
+                <source src="/assets/img/p5/bubbles-02.mp4" type="video/mp4" />
+                <a href="./assets/img/p5/bubbles-02.mp4">動画を開く</a>
+              </video>
+            </li>
+            <li class="work-detail-gallery-item img-container">
+              <video controls muted loop playsinline preload="metadata" poster="/assets/img/p5/particle.webp" aria-label="パーティクルのアニメーション">
+                <source src="/assets/img/p5/particle.mp4" type="video/mp4" />
+                <a href="./assets/img/p5/particle.mp4">動画を開く</a>
+              </video>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+    <script type="module" src="./src/js/coding.js"></script>
+    <script type="module" src="./src/js/breadcrumb-typing.js"></script>
+  </body>
+</html>

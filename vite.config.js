@@ -13,6 +13,7 @@ export default defineConfig({
         musicPlaylist: resolve(__dirname, "music-playlist.html"),
         about: resolve(__dirname, "about.html"),
         illustration: resolve(__dirname, "illustration.html"),
+        coding: resolve(__dirname, "coding.html"),
       },
     },
   },

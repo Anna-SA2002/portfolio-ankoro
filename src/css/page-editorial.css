@@ -1,13 +1,5 @@
 /* Shared reading pages: the same rail and ink as Home/Works, with room for
    complete long-form content. Only these pages opt into this stylesheet. */
-@font-face {
-  font-family: "WorkHack";
-  src: url("../../public/assets/fonts/Hack-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 .page-editorial {
   --reading-max-width: 838px;
   --reading-font-size: 16px;
@@ -105,6 +97,12 @@
 .page-about .about-text p {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+.page-about .about-work-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .contact-copy {
